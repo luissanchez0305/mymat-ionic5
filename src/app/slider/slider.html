@@ -1,0 +1,31 @@
+<ion-header *ngIf="showHeader">
+  <ion-toolbar class="bar">
+    <button ion-button menuToggle end class="button button-clear">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div class="logo"></div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding no-border>
+        <button float-left ion-button  color="light" class="swiper-button-prev swiper-button-black" (click)="prev()" [disabled]="slides.isBeginning()"></button>
+
+        <ion-slides #slides>
+          <ion-slide *ngFor="let image of images">
+              <img src="{{ image }}"/>
+          </ion-slide>
+        </ion-slides>
+        <button float-right ion-button color="light" class="swiper-button-next swiper-button-black" (click)="next()" [disabled]="slides.isEnd()"></button>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="dark">
+    <ion-buttons end>
+        <button ion-button class="button-clear" (click)="skipInstructions()">
+            {{ 'skip' | translate }}
+        </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

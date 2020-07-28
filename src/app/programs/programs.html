@@ -1,0 +1,122 @@
+<!--
+  Generated template for the ProgramsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar>
+    <ion-title>{{ 'programs' | translate }}</ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content padding class="home center">
+    <br>
+    <div class="modaltitle">{{ 'program-kits' | translate }}</div>
+    <div class="modaldesc">{{ 'popular-routines' | translate }}</div>
+
+    <ion-scroll scrollX="true" scrollY="false" class="wide-as-needed programs">
+
+            <ion-row nowrap class="program {{ basicButton ? '' : 'opacity-50' }}" (click)="selectPreSetProgram('basic')">
+                <div class="programpic"><img src="assets/img/Basic.png"></div>
+                <div class="programdesc" [innerHTML]="'basic' | translate"><br><br></div>
+            </ion-row>
+
+            <ion-row nowrap class="program {{ businessTravelButton ? '' : 'opacity-50' }}" (click)="selectPreSetProgram('business and travel')">
+                <div class="programpic"><img src="assets/img/BusinessTraveller.png"></div>
+                <div class="programdesc" [innerHTML]="'business-traveler' | translate"></div>
+            </ion-row>
+
+           <ion-row nowrap class="program {{ familiyButton ? '' : 'opacity-50' }}" (click)="selectPreSetProgram('family')">
+                <div class="programpic"><img src="assets/img/family.png"></div>
+                <div class="programdesc" [innerHTML]="'family-kit' | translate"></div>
+            </ion-row>
+
+            <ion-row nowrap class="program {{ athleteButton ? '' : 'opacity-50' }}" (click)="selectPreSetProgram('athlete')">
+                <div class="programpic"><img src="assets/img/Athlete.png"></div>
+                <div class="programdesc" [innerHTML]="'athlete' | translate"></div>
+            </ion-row>
+
+            <ion-row nowrap class="program {{ spaButton ? '' : 'opacity-50' }}" (click)="selectPreSetProgram('spa')">
+                <div class="programpic"><img src="assets/img/Spa.png"></div>
+                <div class="programdesc" [innerHTML]="'spa-wellness' | translate"><br><br></div>
+            </ion-row>
+
+
+            <ion-row nowrap class="program {{ stressButton ? '' : 'opacity-50' }}" (click)="selectPreSetProgram('stress relief')">
+                <div class="programpic"><img src="assets/img/stress.png"></div>
+                <div class="programdesc" [innerHTML]="'stress-relief' | translate"></div>
+            </ion-row>
+
+
+            <ion-row nowrap class="program {{ seniorButton ? '' : 'opacity-50' }}" (click)="selectPreSetProgram('senior')">
+                <div class="programpic"><img src="assets/img/Senior.png"></div>
+                <div class="programdesc" [innerHTML]="'senior-upper' | translate"><br><br></div>
+            </ion-row>
+
+
+            <ion-row nowrap class="program {{ chakraButton ? '' : 'opacity-50' }}"  (click)="selectPreSetProgram('chakra balancing')">
+                <div class="programpic"><img src="assets/img/chakra.png"></div>
+                <div class="programdesc" [innerHTML]="'chakra-balancing' | translate"></div>
+            </ion-row>
+
+            <ion-row nowrap class="program {{ elementsButton ? '' : 'opacity-50' }}" (click)="selectPreSetProgram('elements')">
+                <div class="programpic"><img src="assets/img/Elements.png"></div>
+                <div class="programdesc" [innerHTML]="'elements-meridians' | translate"><br></div>
+            </ion-row>
+            <ion-row nowrap class="program {{ petssButton ? '' : 'opacity-50' }}" (click)="selectPreSetProgram('petss')">
+                <div class="programpic"><img src="assets/img/MascotasS.png"></div>
+                <div class="programdesc" [innerHTML]="'petss' | translate"><br></div>
+            </ion-row>
+
+            <ion-row nowrap class="program {{ petsxButton ? '' : 'opacity-50' }}" (click)="selectPreSetProgram('petsx')">
+                <div class="programpic"><img src="assets/img/MascotasX.png"></div>
+                <div class="programdesc" [innerHTML]="'petsx' | translate"><br></div>
+            </ion-row>
+    </ion-scroll>
+
+
+    <div class="modaltitle">{{ 'programs' | translate }}</div>
+    <div *ngFor="let routine of predefinedPrograms">
+
+        {{ routine.name | translate }}
+        <!--<div class="purchase-status">{{ routine.purchaseStatus }}</div>-->
+
+        <div class="paddingmodal">
+
+            <ion-list (click)="addPrograms(routine.name, routine.programs[0].apiName, routine.programs[1].apiName,
+                routine.programs[2].apiName,routine.programs[3].apiName)">
+
+                <ion-item *ngFor="let program of routine.programs" class="addiction center">
+                     {{ program.name | translate }}
+                </ion-item>
+
+            </ion-list>
+
+        </div>
+
+    </div>
+
+
+    <div class="modaltitle">{{ 'independent-programs' | translate }}</div>
+    <div class="modaldesc" [innerHTML]="'tap-program' | translate">PROGRAMS</div>
+    <div class="paddingmodal">
+        <ion-list class="programlist">
+
+
+            <ion-item class="addiction center" *ngFor="let program of programs" nav-transition="ios" nav-direction="forward" href="#/app/routines">
+                <div class="programAddButton" (click)="add1Program(program.name, program.runningtime, program.apiName)">
+                    {{ program.name | translate }}
+                </div>
+                <div class="programInfoButton" end (click)="moreProgramInfo(program.name, program.runningtime, program.description, program.apiName)">
+                    <ion-icon ios="ios-information-circle" md="md-information-circle"></ion-icon>
+                </div>
+            </ion-item>
+
+
+        </ion-list>
+    </div>
+</ion-content>

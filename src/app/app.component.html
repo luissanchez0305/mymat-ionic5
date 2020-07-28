@@ -1,0 +1,21 @@
+<ion-app>
+    <ion-menu contentId="main-content" type="overlay">
+	  <ion-content>
+	    <ion-list>
+	      <div class="menutitle"><img src="assets/img/logomenu.png"></div>
+	      <ion-item class="menuitemhome" menu-close>
+	        <img *ngIf="lang_en" src="assets/img/flag-england.png" width="35" height="35" (click)="switchLang('en')">
+	        <img *ngIf="lang_es" src="assets/img/flag-spain.png" width="35" height="35" (click)="switchLang('es')">
+	        <img *ngIf="lang_it" src="assets/img/flag-italy.png" width="35" height="35" (click)="switchLang('it')">
+	        <img *ngIf="lang_gr" src="assets/img/flag-germany.png" width="35" height="35" (click)="switchLang('gr')">
+	        <img *ngIf="lang_fr" src="assets/img/flag-france.png" width="35" height="35" (click)="switchLang('fr')">
+	        <img *ngIf="lang_pt" src="assets/img/flag-brazil.png" width="35" height="35" (click)="switchLang('pt')">
+	      </ion-item>
+	      <ion-item menuClose ion-item class="item-button item-block item-md {{ p.icon }}" *ngFor="let p of pages" (click)="openPage(p)">
+	        <ion-label class="item-content" text-uppercase>{{p.title | translate}}</ion-label>	        
+	      </ion-item>
+	    </ion-list>
+	  </ion-content>
+	</ion-menu>
+    <ion-router-outlet id="main-content"></ion-router-outlet>
+</ion-app>
