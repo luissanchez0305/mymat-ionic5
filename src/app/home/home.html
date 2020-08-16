@@ -1,0 +1,61 @@
+  <ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-button slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-button>
+    <ion-title>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="home">
+    <div padding class="bubblescontainer">
+        <div class="bubbles">
+            <div (click)="selectBubble(1)" on-hold="removeProgramFromRoutine(1)" [ngStyle]="bubblesCurrentState1 && {'background-image':'url(assets/img/bubble-violet.png)'}" class="single-bubble-1"></div>
+            <div class="bubbles-program-name-1" (click)="selectBubble(1,true)">{{ bubblesNames1 }}</div>
+
+            <div (click)="selectBubble(2)" on-hold="removeProgramFromRoutine(2)" [ngStyle]="bubblesCurrentState2 && {'background-image':'url(assets/img/bubble-red.png)'}" class="single-bubble-2"></div>
+            <div class="bubbles-program-name-2" (click)="selectBubble(2,true)">{{ bubblesNames2 }}</div>
+
+            <div (click)="selectBubble(3)" on-hold="removeProgramFromRoutine(3)" [ngStyle]="bubblesCurrentState3 && {'background-image':'url(assets/img/bubble-yellow.png)'}" class="single-bubble-3"></div>
+            <div class="bubbles-program-name-3" (click)="selectBubble(3,true)">{{ bubblesNames3 }}</div>
+
+            <div (click)="selectBubble(4)" on-hold="removeProgramFromRoutine(4)" [ngStyle]="bubblesCurrentState4 && {'background-image':'url(assets/img/bubble-green.png)'}" class="single-bubble-4"></div>
+            <div class="bubbles-program-name-4" (click)="selectBubble(4,true)">{{ bubblesNames4 }}</div>
+        </div>
+    </div>
+
+    <div class="bubbleexplain">
+        <br>
+        <b>{{ 'tap-bubble' | translate }}</b><br><br>
+        <!--<p translate="press-hold"> Press and hold a hearth to remove</p>-->
+        <button [disabled]="!EnableRunRoutine" class="greenbtn" menu-close nav-transition="ios" nav-direction="forward" (click)="runRoutine()" href="#">{{ 'run-routine' | translate }}</button>
+        <br><br>
+        <button [disabled]="!showAddFavoriteButton" class="orangebtn" menu-close nav-transition="ios" nav-direction="forward" (click)="openAddFavorite()" href="#">{{ 'add-favorite' | translate }}</button>
+        <br><br>
+        <button class="graybtn" menu-close nav-transition="ios" nav-direction="forward" (click)="cleanRoutine()" href="#">{{ 'clean-routine' | translate }}</button>
+
+    </div>
+    <div text-center text-uppercase padding-top *ngIf="showLatestSection">{{ 'latest-routines' | translate }}</div>
+    <div *ngFor="let routine of latestRoutines">
+        <div text-center padding-top>
+          {{ routine.day }} {{ routine.month | translate }} {{ routine.year }} {{ routine.hours }}:{{ routine.minutes }}
+        </div>
+        <!--<div class="purchase-status">{{ routine.purchaseStatus }}</div>-->
+
+        <div class="paddingmodal">
+
+            <ion-list (click)="addPrograms('', routine.programs[0].apiName, routine.programs[1].apiName,
+                routine.programs[2].apiName,routine.programs[3].apiName)">
+
+                <ion-item *ngFor="let program of routine.programs" class="addiction center">
+                     {{ program.name | translate }}
+                </ion-item>
+
+                
+            </ion-list>
+
+        </div>
+
+    </div>
+</ion-content>

@@ -1,0 +1,74 @@
+<!--
+  Generated template for the WifiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-toolbar class="bar">
+    <button ion-button menuToggle end class="button button-clear">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <div class="logo"></div>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="home center">
+        <br>
+        <div *ngIf="mymatWifi">
+            <img src="assets/img/wifi.png">
+            <div class="titleinstructions" [innerHTML]="'please-pair' | translate"></div>
+            <br>
+            <p [innerHTML]="'activate-wifi' | translate">Steps to pair your MyMat</p>
+            <p [innerHTML]="'activate-wifi-1' | translate">1. Turn on your MyMat</p>
+            <p [innerHTML]="'activate-wifi-2' | translate">2. On your device, navigate to your Wi-Fi settings</p>
+            <p [innerHTML]="'activate-wifi-3' | translate">3. Connect your device's WiFi with your MyMat network</p>
+            <p [innerHTML]="'activate-wifi-4' | translate">4. Once is connected, return to the MyMat app</p>
+            <!--<p class="interval-counter">0</p>-->
+            <br/>
+            <div *ngIf="mymatNoStatus">
+                <p [innerHTML]="'no-detect-1' | translate">We were unable to detect your MyMat</p>
+                <p [innerHTML]="'no-detect-2' | translate">Please follow the steps to do so</p>
+            </div>
+            <img *ngIf="showLoading" src="assets/img/loading.gif" width="200" />
+        </div>
+        <div *ngIf="mymatStatus">
+            <iframe *ngIf="showIframeStatus" height="100%" width="100%" [src]="iframeUrl" (click)="startRoutine()"></iframe>
+            <div *ngIf="showStatusTable" class="status-table divTable">
+                <div class="divTableHeading">
+                    <div class="divTableRow">
+                        <div class="divTableHead divTableCellFirstLeft">
+                            <h4 [innerHTML]="'battery-power' | translate"></h4>
+                        </div>
+                        <div class="divTableHead divTableCellFirstRight">
+                            <h4 id="battery">{{ batteryCharge }} <img src="{{ batteryImg }}" height="16"></h4>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="divTableBody">
+                    <div class="divTableRow">
+                        <div class="divTableCell">{{ coilText }} 1</div>
+                        <div class="divTableCell" id="coil1">{{ coilText1 }}</div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell coilOdd">{{ coilText }} 2</div>
+                        <div class="divTableCell coilOdd" id="coil2">{{ coilText2 }}</div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell">{{ coilText }} 3</div>
+                        <div class="divTableCell" id="coil3">{{ coilText3 }}</div>
+                    </div>
+                    <div class="divTableRow">
+                        <div class="divTableCell coilOdd divTableCellLastLeft">{{ coilText }} 4</div>
+                        <div class="divTableCell coilOdd divTableCellLastRight" id="coil4">{{ coilText4 }}</div>
+                    </div>
+                </div>
+            </div>
+            <p>&nbsp;</p>
+            <button [disabled]="!isRunRoutineEnabled" class="greenbtn start-routine" menu-close nav-transition="ios" nav-direction="forward" (click)="startRoutine()" [innerHTML]="'start-routine' | translate">LAUNCH MYMAT</button>
+            <img *ngIf="showLoading" src="assets/img/loading.gif" width="200" />
+        </div>
+</ion-content>
