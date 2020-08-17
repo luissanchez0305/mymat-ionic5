@@ -36,6 +36,7 @@
     "@ngx-translate/core": "^12.1.2",
     "@ngx-translate/http-loader": "^5.0.0",
     "cordova-android": "^8.1.0",
+    "cordova-browser": "^6.0.0",
     "cordova-plugin-advanced-http": "2.5.1",
     "cordova-plugin-badge": "^0.8.8",
     "cordova-plugin-datepicker": "^0.9.3",
@@ -58,6 +59,7 @@
     "@angular/compiler-cli": "~9.1.6",
     "@angular/language-service": "~9.1.6",
     "@ionic/angular-toolkit": "^2.2.0",
+    "@ionic/app-scripts": "^3.2.4",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
@@ -86,7 +88,9 @@
       "cordova-plugin-local-notification": {},
       "cordova-plugin-native-spinner": {},
       "cordova-plugin-networkinterface": {},
-      "cordova-plugin-advanced-http": {},
+      "cordova-plugin-advanced-http": {
+        "OKHTTP_VERSION": "3.10.0"
+      },
       "cordova-plugin-device": {},
       "cordova-plugin-whitelist": {},
       "cordova-plugin-splashscreen": {},
@@ -99,7 +103,8 @@
       "cordova-plugin-datepicker": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "browser"
     ]
   }
 }

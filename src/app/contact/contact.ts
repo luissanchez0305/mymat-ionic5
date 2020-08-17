@@ -17,7 +17,9 @@ import { Events } from '../services/events';
 @Component({
   selector: 'app-contact',
   templateUrl: 'contact.html',
-  styleUrls: ['./contact.scss']
+  styleUrls: ['./contact.scss'],
+  providers: [NavParams],
+  
 })
 export class ContactPage implements OnInit {
   private contactForm : FormGroup;

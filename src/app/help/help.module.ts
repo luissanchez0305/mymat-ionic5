@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { HelpPageRoutingModule } from './help-routing.module';
 
 import { HelpPage } from './help';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HelpPageRoutingModule
+    HelpPageRoutingModule,
+    TranslateModule
   ],
   declarations: [HelpPage]
 })

@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
+import { Platform, MenuController, ModalController } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { TranslateService } from '@ngx-translate/core';
@@ -13,6 +13,7 @@ import { HelpPage } from './help/help';
 import { ContactPage } from './contact/contact';
 import { SliderPage } from './slider/slider';
 import { FavoritesPage } from './favorites/favorites';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -20,6 +21,7 @@ import { FavoritesPage } from './favorites/favorites';
   styleUrls: ['app.component.scss']
 })
 export class AppComponent {
+ 
   rootPage: any = HomePage;
   lang_en : boolean;
   lang_es : boolean;
@@ -28,7 +30,9 @@ export class AppComponent {
   lang_gr : boolean;
   lang_it : boolean;
 
-  pages: Array<{title: string, component: any, icon: any, isPush: boolean}>;
+  pages: Array<{title: string, component: any, icon: any, isPush: boolean, path: string}>;
+
+  
 
   constructor(
     private platform: Platform,
@@ -37,16 +41,19 @@ export class AppComponent {
     private translate: TranslateService,
     private storage: Storage,
     public events: Events, 
+    private router: Router,
+    public menuCtrl: MenuController,
+    public modalCtrl: ModalController
   ) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'home-title', component: HomePage, icon: 'menuitemhome', isPush: false },
-      { title: 'help-title', component: HelpPage, icon: 'menuitemhelp', isPush: false },
-      { title: 'contact-title', component: ContactPage, icon: 'menuitemcontact', isPush: false },
-      { title: 'fav-title', component: FavoritesPage, icon: 'menufavorites', isPush: true },
-      { title: 'slider-title', component: SliderPage, icon: 'menuiteminfo', isPush: true}
+      { title: 'home-title', component: HomePage, icon: 'menuitemhome', isPush: false, path: '/home'},
+      { title: 'help-title', component: HelpPage, icon: 'menuitemhelp', isPush: false, path: '/help' },
+      { title: 'contact-title', component: ContactPage, icon: 'menuitemcontact', isPush: false, path: '/contact'},
+      { title: 'fav-title', component: FavoritesPage, icon: 'menufavorites', isPush: true, path: '/favorites' },
+      { title: 'slider-title', component: SliderPage, icon: 'menuiteminfo', isPush: true, path: '/slider'}
     ];
     platform.ready().then(() => {
       this.storage.get(Constants.storageKeyLang).then((value)=>{
@@ -131,5 +138,11 @@ export class AppComponent {
     this.translate.use(lang);
     this.storage.set(Constants.storageKeyLang, lang);
     //this.menuCtrl.close();
+  }
+  openPage(page) {
+    // Reset the content nav to have just this page
+    // we wouldn't want the back button to show in this scenario
+    this.router.navigate([page.path]);
+    this.menuCtrl.close();      
   }
 }

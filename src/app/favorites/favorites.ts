@@ -19,19 +19,20 @@ import { Events } from '../services/events';
 @Component({
   selector: 'app-favorites',
   templateUrl: 'favorites.html',
-  styleUrls: ['./favorites.scss']
+  styleUrls: ['./favorites.scss'],
+  providers: [NavParams],
 })
 export class FavoritesPage implements OnInit {
-  private program1 : any;
-  private program2 : any;
-  private program3 : any;
-  private program4 : any;
+  public program1 : any;
+  public program2 : any;
+  public program3 : any;
+  public program4 : any;
   private responseData : any;
-  private response_text : string;
-  private saveRoutineForm : FormGroup;
-  private showSaveForm : boolean = true;
-  private favoritesList : any;
-  private showLoadingListing : boolean = false;
+  public response_text : string;
+  public saveRoutineForm : FormGroup;
+  public showSaveForm : boolean = true;
+  public favoritesList : any;
+  public showLoadingListing : boolean = false;
   public isDeviceOnline : boolean;
   public offline_device : string;
 
@@ -134,14 +135,6 @@ export class FavoritesPage implements OnInit {
         console.log(err);
       });
     }
-  }
-
-  dismiss(event : Event) {
-    if(event){
-      event.preventDefault();
-      event.stopPropagation();
-    }
-    this.viewCtrl.dismiss();
   }
 
   delete(event: Event, id){

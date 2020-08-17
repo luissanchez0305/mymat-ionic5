@@ -14,6 +14,7 @@ import { Constants } from '../services/constants';
   selector: 'app-slider',
   templateUrl: 'slider.html',
   styleUrls: ['./slider.scss'],
+  providers: [NavParams]
 })
 export class SliderPage implements OnInit {
   public showHeader : boolean;
@@ -31,7 +32,9 @@ export class SliderPage implements OnInit {
   ionViewDidEnter() {
     this.storage.get(Constants.storageKeyLang).then((lang)=>{
       this.translateService.getTranslation(lang).subscribe((value) => {
-        this.culture = value['culture'];
+        this.culture = lang;
+       
+        
         this.images = new Array<string>();
         for(var i = 1; i <= 5; i++){
           this.images.push('./assets/imgs/instructions/' + this.culture + '/'+ i +'.png');

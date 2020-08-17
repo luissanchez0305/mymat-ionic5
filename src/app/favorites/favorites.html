@@ -9,11 +9,8 @@
     <ion-title>
       {{ 'favorite-routines' | translate }}
     </ion-title>
-    <ion-buttons start>
-      <button ion-button (click)="dismiss()">
-        <span ion-text color="primary" showWhen="ios">{{ 'back' | translate }}</span>
-        <ion-icon name="md-close" showWhen="android,windows"></ion-icon>
-      </button>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
   <ion-item class="no-conection" *ngIf="!isDeviceOnline">{{ 'offline-device-text' | translate }}</ion-item>
