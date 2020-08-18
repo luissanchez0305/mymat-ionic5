@@ -9,10 +9,10 @@ const routes: Routes = [
     path: '',
     component: ProgramsPage,
   },
-  {    
-  	path: 'program', 
-  	component: ProgramPage
-  }
+  {
+    path: 'program/:program',
+    component: ProgramPage
+  },
 ];
 
 @NgModule({

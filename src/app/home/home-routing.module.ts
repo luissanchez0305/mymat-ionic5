@@ -15,10 +15,6 @@ const routes: Routes = [
   	component: WifiPage
   },
   {
-    path: '/programs/:bubble',
-    component: ProgramsPage
-  },
-  {
     path: 'subscribe/:callback',
     component: SubscribePage
   }

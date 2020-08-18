@@ -1,9 +1,10 @@
   <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-button slot="start">
+  <ion-toolbar class="bar">
+    <ion-button slot="end">
       <ion-menu-button></ion-menu-button>
     </ion-button>
     <ion-title>
+      <div class="logo"></div>
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -52,6 +53,7 @@
                      {{ program.name | translate }}
                 </ion-item>
 
+                
             </ion-list>
 
         </div>

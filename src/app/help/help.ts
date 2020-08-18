@@ -11,7 +11,8 @@ import { NavController, NavParams } from '@ionic/angular';
 @Component({
   selector: 'app-help',
   templateUrl: 'help.html',
-  styleUrls: ['./help.scss']
+  styleUrls: ['./help.scss'],
+  providers: [NavParams]
 })
 export class HelpPage implements OnInit {
 

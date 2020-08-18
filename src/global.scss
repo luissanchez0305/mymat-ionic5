@@ -15,6 +15,7 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 /* Empty. Add your own CSS if you like */
+@import '@ionic/angular/css/core.css';
 
 .logo {
     width: 120px;
@@ -1119,3 +1120,16 @@ position: absolute;
 .toolbar-ios{
     min-height: 100px !important;
 }
+
+ion-scroll[scrollx=true], ion-scroll[scrolly=true] {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  ion-scroll[scrollx=true] {
+    overflow-x: auto;
+  }
+  
+  ion-scroll[scrolly=true] {
+    overflow-y: auto;
+  }

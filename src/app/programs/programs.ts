@@ -1,5 +1,6 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { NavController, NavParams, IonContent } from '@ionic/angular';
+import { NavParams, IonContent } from '@ionic/angular';
+import { Router, NavigationExtras, ActivatedRoute } from '@angular/router';
 import { Data } from '../services/offline_data';
 import { RoutinesProvider } from '../services/routines/routines';
 import { Constants } from '../services/constants';
@@ -21,6 +22,8 @@ import { APIServiceProvider } from '../services/api-service/api-service';
   selector: 'app-programs',
   templateUrl: 'programs.html',
   styleUrls: ['./programs.scss'],
+  providers: [NavParams]
+  
 })
 export class ProgramsPage implements OnInit {
   @ViewChild(IonContent, { static: true}) content: IonContent;
@@ -42,19 +45,20 @@ export class ProgramsPage implements OnInit {
   public elementsButton : boolean;
   public petssButton : boolean;
   public petsxButton : boolean;
-
+  
   ngOnInit() {
   }
 
-  constructor(public navCtrl: NavController, private storage: Storage, public navParams: NavParams, 
-    private translateService: TranslateService, public routines: RoutinesProvider, public events: Events,
-    public apiService : APIServiceProvider, private spinnerDialog: SpinnerDialog) {
-      this.program = navParams.get('bubble');
+  constructor(private storage: Storage, public navParams: NavParams, private translateService: TranslateService, public routines: RoutinesProvider, 
+    public events:Events, public apiService : APIServiceProvider, private activatedRoute: ActivatedRoute, private spinnerDialog: SpinnerDialog, 
+    public router: Router) {
+
+      this.program = Number(this.activatedRoute.snapshot.paramMap.get('bubble'));
 
       this.events.subscribe('add1ProgramEvent', (data: any) => {
         this.program = data.programNumber;
         this.add1Program(data.programName, data.programRunningTime, data.programApiName);
-        this.navCtrl.pop();
+        this.router.navigateByUrl('/');
       });
   }
   ionViewDidLeave(){
@@ -265,9 +269,10 @@ export class ProgramsPage implements OnInit {
   }
 
   addPrograms(routineName, program1, program2, program3, program4){
-    this.navCtrl.pop();
+    
     var bubbleNames = this.routines.addPrograms(routineName, program1, program2, program3, program4);
     this.events.publish("sharesBubbles", { bubbleNames : bubbleNames });
+    this.router.navigateByUrl('/');
   }
 
   add1Program(programName, programRunningTime, programApiName){
@@ -287,11 +292,16 @@ export class ProgramsPage implements OnInit {
       this.programName4
     ];
     this.events.publish("sharesBubbles", { bubbleNames: bubbleNames });
-    this.navCtrl.pop();
+    this.router.navigateByUrl('/');
   }
 
   moreProgramInfo(name, runTime, description, apiName){
-    this.apiService.setCallBackProgram({ programNumber: this.program, name: name, runTime: runTime, description: description, apiName: apiName });
-    this.navCtrl.navigateRoot('program');
+    let _program = { programNumber: this.program, name: name, runTime: runTime, description: description, apiName: apiName };
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        program: JSON.stringify(_program)
+      }
+    };
+    this.router.navigate(['/program'], navigationExtras);
   }
 }

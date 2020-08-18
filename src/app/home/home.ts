@@ -1,5 +1,6 @@
 import { Component, NgZone, ViewChild } from '@angular/core';
 import { NavController, ModalController, IonContent } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
 import { TranslateService } from '@ngx-translate/core';
 import { Network } from '@ionic-native/network/ngx';
@@ -41,11 +42,12 @@ export class HomePage {
   constructor(public navCtrl: NavController, private storage: Storage, public routines: RoutinesProvider,
     private translateService: TranslateService, private network: Network, private zone: NgZone,
     private device: Device, public apiService : APIServiceProvider, public modalCtrl: ModalController, 
-    public events: Events, private localNotifications : LocalNotifications) {
+    public events: Events, private localNotifications : LocalNotifications, private router: Router) {
     //this.checkAllBubbles();
     this.events.subscribe('sharesBubbles', (data: any) => {
-      for(var i = 1; i <= data.bubbles.length; i++){
-        this.updateBubbles(i, data.bubbles[i - 1]);
+      console.log(data.bubbleNames);
+      for(var i = 1; i <= data.bubbleNames.length; i++){
+        this.updateBubbles(i, data.bubbleNames[i - 1]);
       }
       this.AllBubblesChecked(this.routines.getPrograms());
     });
@@ -157,7 +159,7 @@ export class HomePage {
   }
 
   selectBubble(prg, add){
-    this.navCtrl.navigateForward('programs/' + prg);
+    this.router.navigate(['programs/', {bubble: prg}]);
   }
 
   runRoutine(){
