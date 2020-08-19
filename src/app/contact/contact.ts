@@ -33,7 +33,7 @@ export class ContactPage implements OnInit {
   ngOnInit() {
   }
   
-  constructor(public navCtrl: NavController, public navParams: NavParams, private formBuilder: FormBuilder, public apiService : APIServiceProvider,
+  constructor( public navParams: NavParams, private formBuilder: FormBuilder, public apiService : APIServiceProvider,
     private translateService: TranslateService, private storage: Storage, public events : Events) {
     this.contactForm = this.formBuilder.group({
       email: ['', Validators.required],

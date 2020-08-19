@@ -39,10 +39,19 @@ export class HomePage {
   public showLatestSection: boolean;
   public latestRoutines : any;
 
-  constructor(public navCtrl: NavController, private storage: Storage, public routines: RoutinesProvider,
-    private translateService: TranslateService, private network: Network, private zone: NgZone,
-    private device: Device, public apiService : APIServiceProvider, public modalCtrl: ModalController, 
-    public events: Events, private localNotifications : LocalNotifications, private router: Router) {
+  constructor(
+    public navCtrl: NavController, 
+    private storage: Storage, 
+    public routines: RoutinesProvider,
+    private translateService: TranslateService, 
+    private network: Network, 
+    private zone: NgZone,
+    private device: Device, 
+    public apiService : APIServiceProvider, 
+    public modalCtrl: ModalController, 
+    public events: Events, 
+    private localNotifications : LocalNotifications, 
+    private router: Router) {
     //this.checkAllBubbles();
     this.events.subscribe('sharesBubbles', (data: any) => {
       console.log(data.bubbleNames);
@@ -53,7 +62,8 @@ export class HomePage {
     });
 
     this.events.subscribe('addProgramsEvent', (data: any) => {
-      this.navCtrl.pop();
+    //  this.navCtrl.pop();
+     
       console.log(data.program1);
       let bubbles = this.routines.addPrograms('', data.program1, data.program2, data.program3, data.program4);
       this.events.publish("sharesBubbles", {bubbles: bubbles});
@@ -96,7 +106,8 @@ export class HomePage {
             var obj : any = result;
             if (obj.found == "0") {
               // despliega la vista de insercion de datos
-              this.navCtrl.navigateForward('subscribe');
+              this.router.navigate(['subscribe']);
+            //  this.navCtrl.navigateForward('subscribe');
             }
             else{
               this.storage.set(Constants.deviceInfoKey, { "email" : obj.email, "uuid" : _uuid });
@@ -145,7 +156,10 @@ export class HomePage {
     this.storage.get(Constants.deviceInfoKey).then(async (info)=>{
       if(typeof info === 'undefined' || info == null){
         // despliega la vista de insercion de datos
-        await this.navCtrl.navigateForward('subscribe/favorites');
+        await this.router.navigate(['subscribe/favorites']);
+        
+        //this.navCtrl.navigateForward('subscribe/favorites');
+        
       } else {
         await this.apiService.setFavoriteShowSave(true);
         let profileModal = await this.modalCtrl.create({ component: FavoritesPage });
@@ -165,13 +179,26 @@ export class HomePage {
   runRoutine(){
     var programs = this.routines.getPrograms();
     if(this.AllBubblesChecked(programs)){
-      this.navCtrl.navigateRoot(
+      this.router.navigate(['wifi/' + 
+
+        this.routines.getProgram(programs[0]) + '/' + 
+        this.routines.getProgram(programs[1]) + '/' + 
+        this.routines.getProgram(programs[2]) + '/' +
+        this.routines.getProgram(programs[3])    
+        
+        ]);
+
+
+
+
+
+  /*    this.navCtrl.navigateRoot(
         'wifi/' + 
           this.routines.getProgram(programs[0]) + '/' + 
           this.routines.getProgram(programs[1]) + '/' + 
           this.routines.getProgram(programs[2]) + '/' +
           this.routines.getProgram(programs[3])
-       );
+       );*/
     }
   }
 

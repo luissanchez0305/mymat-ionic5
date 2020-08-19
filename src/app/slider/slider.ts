@@ -3,6 +3,8 @@ import { NavController, NavParams, IonSlides, Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { TranslateService } from '@ngx-translate/core';
 import { Constants } from '../services/constants';
+import { Router } from '@angular/router';
+
 /**
  * Generated class for the SliderPage page.
  *
@@ -25,7 +27,7 @@ export class SliderPage implements OnInit {
   ngOnInit() {
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public plt: Platform, public storage: Storage, public translateService: TranslateService) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public plt: Platform, public storage: Storage, public translateService: TranslateService, public router: Router) {
     this.showHeader = false;
   }
 
@@ -44,7 +46,9 @@ export class SliderPage implements OnInit {
   }
 
   skipInstructions(){
-    this.navCtrl.navigateRoot('/home');
+
+    this.router.navigate(['/home']);
+   // this.navCtrl.navigateRoot('/home');
   }
 
   next() {
