@@ -22,7 +22,7 @@ import { Events } from '../services/events';
   
 })
 export class ContactPage implements OnInit {
-  private contactForm : FormGroup;
+  public contactForm : FormGroup;
   public contactDisabled : boolean;
   public  name_value : string;
   public  email_value : string;

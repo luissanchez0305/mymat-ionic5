@@ -166,7 +166,7 @@ export class HomePage {
     console.log('hold: ' + prg);
   }
 
-  selectBubble(prg, add){
+  selectBubble(prg){
     this.router.navigate(['programs/', {bubble: prg}]);
   }
 

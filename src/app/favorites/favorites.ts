@@ -1,5 +1,6 @@
 import { Component, NgZone, OnInit } from '@angular/core';
 import { NavParams, LoadingController, AlertController, ModalController } from '@ionic/angular';
+import { Router } from '@angular/router';
 import { RoutinesProvider } from '../services/routines/routines';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { APIServiceProvider } from '../services/api-service/api-service';
@@ -39,7 +40,7 @@ export class FavoritesPage implements OnInit {
   ngOnInit() {
   }
   
-  constructor(public navParams: NavParams, public viewCtrl: ModalController, public routines: RoutinesProvider,
+  constructor(public router: Router, public navParams: NavParams, public viewCtrl: ModalController, public routines: RoutinesProvider,
     private formBuilder: FormBuilder, private translateService: TranslateService, private storage: Storage,
     public apiService : APIServiceProvider, private network: Network, public loadingCtrl: LoadingController,
     public alertCtrl : AlertController, private zone: NgZone, public events: Events) {
@@ -76,6 +77,10 @@ export class FavoritesPage implements OnInit {
         });
       });
     });
+  }
+
+  dismiss(event : Event) {
+    this.router.navigate(['/']);
   }
 
   showProgram(id, name, program1, program2, program3, program4){
