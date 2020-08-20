@@ -1,12 +1,12 @@
-  <ion-header [translucent]="true">
-  <ion-toolbar class="bar">
-    <ion-button slot="end">
-      <ion-menu-button></ion-menu-button>
-    </ion-button>
-    <ion-title>
-      <div class="logo"></div>
-    </ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="true">
+    <ion-toolbar class="bar">
+        <ion-button slot="end">
+            <ion-menu-button></ion-menu-button>
+        </ion-button>
+        <ion-title>
+            <div class="logo"></div>
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="home">
@@ -26,6 +26,10 @@
         </div>
     </div>
 
+
+
+
+
     <div class="bubbleexplain">
         <br>
         <b>{{ 'tap-bubble' | translate }}</b><br><br>
@@ -37,10 +41,16 @@
         <button class="graybtn" menu-close nav-transition="ios" nav-direction="forward" (click)="cleanRoutine()" href="#">{{ 'clean-routine' | translate }}</button>
 
     </div>
+
+
+
+
+
+
     <div text-center text-uppercase padding-top *ngIf="showLatestSection">{{ 'latest-routines' | translate }}</div>
     <div *ngFor="let routine of latestRoutines">
         <div text-center padding-top>
-          {{ routine.day }} {{ routine.month | translate }} {{ routine.year }} {{ routine.hours }}:{{ routine.minutes }}
+            {{ routine.day }} {{ routine.month | translate }} {{ routine.year }} {{ routine.hours }}:{{ routine.minutes }}
         </div>
         <!--<div class="purchase-status">{{ routine.purchaseStatus }}</div>-->
 
@@ -50,10 +60,10 @@
                 routine.programs[2].apiName,routine.programs[3].apiName)">
 
                 <ion-item *ngFor="let program of routine.programs" class="addiction center">
-                     {{ program.name | translate }}
+                    {{ program.name | translate }}
                 </ion-item>
 
-                
+
             </ion-list>
 
         </div>

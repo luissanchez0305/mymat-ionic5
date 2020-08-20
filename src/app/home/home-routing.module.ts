@@ -12,11 +12,11 @@ const routes: Routes = [
   },
   {
   	path: 'wifi/:prog1/:prog2/:prog3/:prog4',
-  	component: WifiPage
+  	component: WifiPage,
   },
   {
     path: 'subscribe/:callback',
-    component: SubscribePage
+    component: SubscribePage,
   }
 ];
 

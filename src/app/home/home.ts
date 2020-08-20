@@ -15,6 +15,7 @@ import { WifiPage } from '../wifi/wifi';
 import { FavoritesPage } from '../favorites/favorites';
 import { Constants } from '../services/constants';
 import { SubscribePage } from '../subscribe/subscribe';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
@@ -50,6 +51,10 @@ export class HomePage {
     public apiService : APIServiceProvider, 
     public modalCtrl: ModalController, 
     public events: Events, 
+  
+    //PARA DATA DE CORRER RUTINA
+    public dataSrv:DataService,
+
     private localNotifications : LocalNotifications, 
     private router: Router) {
     //this.checkAllBubbles();
@@ -178,9 +183,21 @@ export class HomePage {
 
   runRoutine(){
     var programs = this.routines.getPrograms();
-    if(this.AllBubblesChecked(programs)){
-      this.router.navigate(['wifi/' + 
 
+   
+
+   // console.log(programs);
+
+    if(this.AllBubblesChecked(programs)){
+ 
+
+      this.dataSrv.data = this.routines.getPrograms();
+
+
+      this.router.navigate(['wifi/',{ DataService }]);
+/*
+
+      this.router.navigate(['wifi/' + 
         this.routines.getProgram(programs[0]) + '/' + 
         this.routines.getProgram(programs[1]) + '/' + 
         this.routines.getProgram(programs[2]) + '/' +
@@ -188,7 +205,7 @@ export class HomePage {
         
         ]);
 
-
+*/
 
 
 
@@ -203,6 +220,8 @@ export class HomePage {
   }
 
   private AllBubblesChecked(programs){
+    console.log("Estamos en el metodo AllBubblesChecked");
+    console.log(programs);
 
     if(typeof programs[0] !== 'undefined' && programs[0] != null && programs[0].length > 0 &&
     typeof programs[1] !== 'undefined' && programs[1] != null && programs[1].length > 0 &&

@@ -5,42 +5,42 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-toolbar class="bar">
-    <button ion-button menuToggle end class="button button-clear">
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>
-      <div class="logo"></div>
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar class="bar">
+        <ion-button slot="end">
+            <ion-menu-button></ion-menu-button>
+        </ion-button>
+        <ion-title>
+            <div class="logo"></div>
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 
 <ion-content padding class="home center">
-  <div class="list card cardprogram">
-    <div class="item">
+    <div class="list card cardprogram">
+        <div class="item">
 
-        <h2 padding>{{ 'contact-us-text' | translate }}</h2>
+            <h2 padding>{{ 'contact-us-text' | translate }}</h2>
 
-    </div>
+        </div>
 
-    <div padding class="item item-body">
-      <form [formGroup]="contactForm" (ngSubmit)="attemptSendMail()">
-        <p class="lorems center-forced" [innerHTML]="'get-in-touch' | translate">Text</p>
-        <label class="item-input contact">
+        <div padding class="item item-body">
+            <form [formGroup]="contactForm" (ngSubmit)="attemptSendMail()">
+                <p class="lorems center-forced" [innerHTML]="'get-in-touch' | translate">Text</p>
+                <label class="item-input contact">
           <ion-input type="text" placeholder="{{ 'name-text' | translate }}" formControlName="name" value="{{ name_value }}"></ion-input>
         </label><br>
-        <label class="item-input contact">
+                <label class="item-input contact">
           <ion-input type="email" placeholder="Email"  autocapitalize="none"formControlName="email" value="{{ email_value }}"></ion-input>
         </label><br>
-        <label class="item-input contact">
+                <label class="item-input contact">
           <ion-textarea placeholder="{{ 'message-text' | translate }}" formControlName="message" value="{{ message_value }}"></ion-textarea>
         </label><br>
-        <button type="submit" ion-button [disabled]="!contactForm.valid" [disabled]="contactDisabled" class="button-contact button-calm">{{ button_send }}</button>
-        <div padding>
-          {{ response_text }}
+                <button type="submit" ion-button [disabled]="!contactForm.valid" [disabled]="contactDisabled" class="button-contact button-calm">{{ button_send }}</button>
+                <div padding>
+                    {{ response_text }}
+                </div>
+            </form>
         </div>
-      </form>
     </div>
-  </div>
 </ion-content>

@@ -20,7 +20,7 @@ import { Router } from '@angular/router';
 })
 export class SliderPage implements OnInit {
   public showHeader : boolean;
-  @ViewChild(IonSlides, { static: true}) slides: IonSlides;
+  @ViewChild( IonSlides, { static: true}) slides: IonSlides;
   public images : Array<string>;
   public culture: string; 
   
@@ -33,7 +33,15 @@ export class SliderPage implements OnInit {
 
   ionViewDidEnter() {
     this.storage.get(Constants.storageKeyLang).then((lang)=>{
-      this.translateService.getTranslation(lang).subscribe((value) => {
+      this.translateService.getTranslation(lang).subscribe(
+        (value) => {
+
+
+          
+
+      
+
+
         this.culture = lang;
        
         
@@ -52,10 +60,25 @@ export class SliderPage implements OnInit {
   }
 
   next() {
+    console.log("PASA PERO NO FUNCIONA");
+
     this.slides.slideNext();
+
+    console.log("PASA PERO NO FUNCIONA");
+
   }
+
+
+  
 
   prev() {
     this.slides.slidePrev();
+
+    console.log("PASA PERO NO FUNCIONA PREV");
   }
+
+
+
+
+  
 }

@@ -1,31 +1,35 @@
 <ion-header *ngIf="showHeader">
-  <ion-toolbar class="bar">
-    <ion-button ion-button menuToggle end class="button button-clear">
-      <ion-icon name="menu"></ion-icon>
-    </ion-button>
-    <ion-title>
-      <div class="logo"></div>
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar class="bar">
+        <ion-button ion-button menuToggle end class="button button-clear">
+            <ion-icon name="menu"></ion-icon>
+        </ion-button>
+        <ion-title>
+            <div class="logo"></div>
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding no-border>
-        <button float-left ion-button  color="light" class="swiper-button-prev swiper-button-black" (click)="prev()" [disabled]="slides.isBeginning()"></button>
 
-        <ion-slides #slides>
-          <ion-slide *ngFor="let image of images">
-              <img src="{{ image }}"/>
-          </ion-slide>
-        </ion-slides>
-        <button float-right ion-button color="light" class="swiper-button-next swiper-button-black" (click)="next()" [disabled]="slides.isEnd()"></button>
+    <ion-slides #slides>
+        <ion-slide *ngFor="let image of images">
+            <img src="{{ image }}" />
+        </ion-slide>
+
+
+    </ion-slides>
+    <button type="submit" ion-button color="light" class="swiper-button-prev swiper-button-black" (click)="prev()"></button>
+
+    <button float-right ion-button color="light" class="swiper-button-next swiper-button-black" (click)="next()"></button>
+
 
 </ion-content>
 <ion-footer>
-  <ion-toolbar color="dark">
-    <ion-buttons end>
-        <ion-button ion-button class="button-clear" (click)="skipInstructions()">
-            {{ 'skip' | translate }}
-        </ion-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar color="dark">
+        <ion-buttons end>
+            <ion-button ion-button class="button-clear" (click)="skipInstructions()">
+                {{ 'skip' | translate }}
+            </ion-button>
+        </ion-buttons>
+    </ion-toolbar>
 </ion-footer>

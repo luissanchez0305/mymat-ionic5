@@ -6,6 +6,7 @@ import { PlayingPage } from '../playing/playing';
 import { Constants } from '../services/constants';
 import { NetworkInterface } from '@ionic-native/network-interface/ngx';
 import { TranslateService } from '@ngx-translate/core';
+import { ActivatedRoute } from '@angular/router';
 
 /**
  * Generated class for the WifiPage page.
@@ -45,21 +46,51 @@ export class WifiPage implements OnInit {
   public iframeUrl: any;
   public showIframeStatus : boolean;
 
+    
+  data:any;
+
+
+
+
+
   ngOnInit() {
+
+    
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public apiService : APIServiceProvider,
-    private translateService: TranslateService, public networkInterface : NetworkInterface, public platform: Platform) {
+  constructor(public navCtrl: NavController,
+     public navParams: NavParams, 
+     private route: ActivatedRoute,
+     private storage: Storage, 
+     public apiService : APIServiceProvider,
+    private translateService: TranslateService, 
+    public networkInterface : NetworkInterface, 
+    public platform: Platform) {
+
+        
+
+
+
       this.storage.get(Constants.storageKeyLang).then((lang)=>{
         this.translateService.getTranslation(lang).subscribe((value) =>{
           this.coilText = typeof value['coil'] === 'undefined' ? 'Antena' : value['coil'];
         });
       });
+
+      this.data = this.route.snapshot.data['data'];
+      console.log(this.data);
+
+      /*
       this.program1 = this.navParams.get('prog1');
       this.program2 = this.navParams.get('prog2');
       this.program3 = this.navParams.get('prog3');
       this.program4 = this.navParams.get('prog4');
+
+      */
   }
+
+ 
+
 
   ionViewDidLeave(){
     this.stop();
