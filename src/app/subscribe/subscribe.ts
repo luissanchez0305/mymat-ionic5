@@ -9,6 +9,7 @@ import { Constants } from '../services/constants';
 import { SliderPage } from '../slider/slider';
 import { Network } from '@ionic-native/network/ngx';
 import { FavoritesPage } from '../favorites/favorites';
+import { Router } from '@angular/router';
 
 /**
  * Generated class for the SubscribePage page.
@@ -39,7 +40,7 @@ export class SubscribePage implements OnInit {
   ngOnInit() {
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone,
+  constructor(public navCtrl: NavController, public navParams: NavParams, private zone: NgZone, private router: Router,
     private formBuilder: FormBuilder, private storage: Storage, public apiService : APIServiceProvider,
     private translateService: TranslateService, private device: Device, private modalCtrl: ModalController,
     private network: Network) {
@@ -102,10 +103,12 @@ export class SubscribePage implements OnInit {
             setTimeout(async () => {
               if(this.callBackPage == 'none'){
                 // despliega la vista de de instrucciones
-                this.navCtrl.navigateForward('slider');
+
+                this.router.navigate(['slider']);
+                //this.navCtrl.navigateForward('slider');
               }
               else if(this.callBackPage == 'favorites'){
-                this.navCtrl.pop();
+               // this.navCtrl.pop();
                 let profileModal = await this.modalCtrl.create({ component: FavoritesPage });
                 profileModal.present();
               }
