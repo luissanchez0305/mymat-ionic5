@@ -7,6 +7,7 @@ import { Constants } from '../services/constants';
 import { NetworkInterface } from '@ionic-native/network-interface/ngx';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 
 /**
  * Generated class for the WifiPage page.
@@ -42,6 +43,7 @@ export class WifiPage implements OnInit {
   private program2: any;
   private program3: any;
   private program4: any;
+  
 
   public iframeUrl: any;
   public showIframeStatus : boolean;
@@ -60,6 +62,7 @@ export class WifiPage implements OnInit {
 
   constructor(public navCtrl: NavController,
      public navParams: NavParams, 
+     private router: Router,
      private route: ActivatedRoute,
      private storage: Storage, 
      public apiService : APIServiceProvider,
@@ -357,7 +360,8 @@ export class WifiPage implements OnInit {
           });
 
           /* CORRER RUTINA */
-          this.navCtrl.navigateRoot('playing');
+          this.router.navigate(['playing']);
+        //  this.navCtrl.navigateRoot('playing');
         }
         else{
           this.showLoading = false;
