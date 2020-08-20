@@ -16,11 +16,8 @@ const routes: Routes = [
   { path: 'programs/:bubble', loadChildren: () => import('./programs/programs.module').then(m => m.ProgramsPageModule) },
   { path: 'slider', loadChildren: () => import('./slider/slider.module').then(m => m.SliderPageModule) },
   { path: 'subscribe', loadChildren: () => import('./subscribe/subscribe.module').then(m => m.SubscribePageModule) },
-  { path: 'wifi', 
-    resolve:{
-      data: DataRSVService
-    },
-    loadChildren: () => import('./wifi/wifi.module').then(m => m.WifiPageModule) }
+  { path: 'wifi', loadChildren: () => import('./wifi/wifi.module').then(m => m.WifiPageModule) },
+  { path: 'wifi/:programs', loadChildren: () => import('./wifi/wifi.module').then(m => m.WifiPageModule) }
 ];
 
 @NgModule({

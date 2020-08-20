@@ -7,8 +7,10 @@
 <ion-header>
 
   <ion-toolbar>
-    <ion-title slot="end">{{ programName }}</ion-title>
-    <ion-back-button routerLink="/programs"></ion-back-button>
+    <ion-title>{{ programName }}</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="goBack()"></ion-back-button>
+    </ion-buttons>
   </ion-toolbar>
 
 </ion-header>

@@ -1,5 +1,5 @@
 import { Component, ViewChild, OnInit } from '@angular/core';
-import { NavController, NavParams, IonSlides, Platform } from '@ionic/angular';
+import { NavParams, IonSlides, Platform } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { TranslateService } from '@ngx-translate/core';
 import { Constants } from '../services/constants';
@@ -27,7 +27,7 @@ export class SliderPage implements OnInit {
   ngOnInit() {
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public plt: Platform, public storage: Storage, public translateService: TranslateService, public router: Router) {
+  constructor(public navParams: NavParams, public plt: Platform, public storage: Storage, public translateService: TranslateService, public router: Router) {
     this.showHeader = false;
   }
 
@@ -56,7 +56,6 @@ export class SliderPage implements OnInit {
   skipInstructions(){
 
     this.router.navigate(['/home']);
-   // this.navCtrl.navigateRoot('/home');
   }
 
   next() {

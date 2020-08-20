@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from '@ionic/angular';
+import { NavParams } from '@ionic/angular';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
 import { APIServiceProvider } from '../services/api-service/api-service';
 import { TranslateService } from '@ngx-translate/core';
