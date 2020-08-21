@@ -49,6 +49,7 @@
     "cordova-plugin-statusbar": "^2.4.3",
     "cordova-sqlite-storage": "5.0.0",
     "rxjs": "~6.5.1",
+    "sharp": "^0.25.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
