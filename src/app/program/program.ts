@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
 import { Constants } from '../services/constants';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
@@ -31,7 +30,7 @@ export class ProgramPage implements OnInit{
   ngOnInit() {
   }
 
-  constructor(public navCtrl: NavController, public storage: Storage,
+  constructor(public storage: Storage,
     public translateService: TranslateService, public apiService : APIServiceProvider, public events: Events,
     private route: ActivatedRoute, private router: Router) {
     this.route.queryParams.subscribe(params => {
@@ -55,6 +54,10 @@ export class ProgramPage implements OnInit{
           this.programNumber = this.programObj.programNumber
         });
       });
+  }
+
+  goBack(){
+    this.router.navigate(['programs/', { bubble: this.programNumber }]);
   }
 
   add1Program(programName, programRunningTime, programApiName){

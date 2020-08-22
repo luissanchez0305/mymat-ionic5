@@ -11,7 +11,7 @@ const routes: Routes = [
     component: HomePage,
   },
   {
-  	path: 'wifi/:prog1/:prog2/:prog3/:prog4',
+  	path: 'wifi/:programs',
   	component: WifiPage,
   },
   {

@@ -45,6 +45,7 @@ export class ProgramsPage implements OnInit {
   public elementsButton : boolean;
   public petssButton : boolean;
   public petsxButton : boolean;
+  public isDeviceOnline : boolean;
   
   ngOnInit() {
   }
@@ -52,7 +53,7 @@ export class ProgramsPage implements OnInit {
   constructor(private storage: Storage, public navParams: NavParams, private translateService: TranslateService, public routines: RoutinesProvider, 
     public events:Events, public apiService : APIServiceProvider, private activatedRoute: ActivatedRoute, private spinnerDialog: SpinnerDialog, 
     public router: Router) {
-
+      this.isDeviceOnline = true;
       this.program = Number(this.activatedRoute.snapshot.paramMap.get('bubble'));
 
       this.events.subscribe('add1ProgramEvent', (data: any) => {
@@ -269,8 +270,16 @@ export class ProgramsPage implements OnInit {
   }
 
   addPrograms(routineName, program1, program2, program3, program4){
-    
+    //aqui addprogramas
+
+    console.log(program1);
+    console.log(program2);
+    console.log(program3);
+    console.log(program4);
+    console.log("routinename.apiname");
+    console.log(routineName.apiName);
     var bubbleNames = this.routines.addPrograms(routineName, program1, program2, program3, program4);
+    
     this.events.publish("sharesBubbles", { bubbleNames : bubbleNames });
     this.router.navigateByUrl('/');
   }

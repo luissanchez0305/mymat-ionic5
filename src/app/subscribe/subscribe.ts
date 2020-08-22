@@ -24,11 +24,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./subscribe.scss'],
 })
 export class SubscribePage implements OnInit {
-  private maxDateOfPicker : string;
-  private subscribeForm : FormGroup;
+  public maxDateOfPicker : string;
+  public subscribeForm : FormGroup;
   public showSubmitButton : boolean;
   private maxDate : string;
-  private response_text : string;
+  public response_text : string;
   private responseData : any;
   private callBackPage : string;
   public isDeviceOnline : boolean;
@@ -36,6 +36,8 @@ export class SubscribePage implements OnInit {
   public errorEmailClass : string;
   public errorGenderClass : string;
   public errorDateClass : string;
+  public name_value : string;
+  public email_value : string;
 
   ngOnInit() {
   }

@@ -1,5 +1,5 @@
 import { Component, NgZone, OnInit } from '@angular/core';
-import { NavController, NavParams, Platform } from '@ionic/angular';
+import { NavParams, Platform } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Storage } from '@ionic/storage';
 import { Constants } from '../services/constants';
@@ -34,7 +34,7 @@ export class PlayingPage implements OnInit {
   ngOnInit() {
   }
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public storage: Storage,
+  constructor(public navParams: NavParams, public storage: Storage,
     public translateService: TranslateService, private localNotifications : LocalNotifications, public plt: Platform,
     private zone: NgZone) {
       var _this = this;

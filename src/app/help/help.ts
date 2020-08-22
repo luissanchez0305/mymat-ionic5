@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController, NavParams } from '@ionic/angular';
+import { NavParams } from '@ionic/angular';
 
 /**
  * Generated class for the HelpPage page.
@@ -16,7 +16,7 @@ import { NavController, NavParams } from '@ionic/angular';
 })
 export class HelpPage implements OnInit {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navParams: NavParams) {
   }
 
   ngOnInit() {

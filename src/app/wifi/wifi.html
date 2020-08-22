@@ -5,14 +5,13 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-    <ion-toolbar class="bar">
-        <button ion-button menuToggle end class="button button-clear">
-      <ion-icon name="menu"></ion-icon>
-    </button>
-        <ion-title>
-            <div class="logo"></div>
-        </ion-title>
-    </ion-toolbar>
+
+  <ion-toolbar>
+    <ion-title>{{ 'run-routine-title' | translate }} </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button routerLink="/"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding class="home center">

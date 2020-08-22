@@ -1,6 +1,6 @@
 import { Component, NgZone, ViewChild } from '@angular/core';
-import { NavController, ModalController, IonContent } from '@ionic/angular';
-import { Router } from '@angular/router';
+import { ModalController, IonContent } from '@ionic/angular';
+import { Router, NavigationExtras } from '@angular/router';
 import { Storage } from '@ionic/storage';
 import { TranslateService } from '@ngx-translate/core';
 import { Network } from '@ionic-native/network/ngx';
@@ -15,7 +15,6 @@ import { WifiPage } from '../wifi/wifi';
 import { FavoritesPage } from '../favorites/favorites';
 import { Constants } from '../services/constants';
 import { SubscribePage } from '../subscribe/subscribe';
-import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
@@ -41,7 +40,6 @@ export class HomePage {
   public latestRoutines : any;
 
   constructor(
-    public navCtrl: NavController, 
     private storage: Storage, 
     public routines: RoutinesProvider,
     private translateService: TranslateService, 
@@ -51,15 +49,15 @@ export class HomePage {
     public apiService : APIServiceProvider, 
     public modalCtrl: ModalController, 
     public events: Events, 
-  
-    //PARA DATA DE CORRER RUTINA
-    public dataSrv:DataService,
 
     private localNotifications : LocalNotifications, 
     private router: Router) {
     //this.checkAllBubbles();
     this.events.subscribe('sharesBubbles', (data: any) => {
       console.log(data.bubbleNames);
+      console.log(data);
+     
+      console.log("Estoy aqui");
       for(var i = 1; i <= data.bubbleNames.length; i++){
         this.updateBubbles(i, data.bubbleNames[i - 1]);
       }
@@ -67,8 +65,6 @@ export class HomePage {
     });
 
     this.events.subscribe('addProgramsEvent', (data: any) => {
-    //  this.navCtrl.pop();
-     
       console.log(data.program1);
       let bubbles = this.routines.addPrograms('', data.program1, data.program2, data.program3, data.program4);
       this.events.publish("sharesBubbles", {bubbles: bubbles});
@@ -94,7 +90,6 @@ export class HomePage {
       });
     });
 
-    //this.navCtrl.push(SubscribePage, { callBackPage : 'none' });
     this.storage.get(Constants.deviceInfoKey).then((info)=>{
       if(typeof info === 'undefined' || info == null){
         /*if(window.hasOwnProperty('cordova')){*/
@@ -112,7 +107,6 @@ export class HomePage {
             if (obj.found == "0") {
               // despliega la vista de insercion de datos
               this.router.navigate(['subscribe']);
-            //  this.navCtrl.navigateForward('subscribe');
             }
             else{
               this.storage.set(Constants.deviceInfoKey, { "email" : obj.email, "uuid" : _uuid });
@@ -162,9 +156,7 @@ export class HomePage {
       if(typeof info === 'undefined' || info == null){
         // despliega la vista de insercion de datos
         await this.router.navigate(['subscribe/favorites']);
-        
-        //this.navCtrl.navigateForward('subscribe/favorites');
-        
+                
       } else {
         await this.apiService.setFavoriteShowSave(true);
         let profileModal = await this.modalCtrl.create({ component: FavoritesPage });
@@ -177,7 +169,7 @@ export class HomePage {
     console.log('hold: ' + prg);
   }
 
-  selectBubble(prg, add){
+  selectBubble(prg){
     this.router.navigate(['programs/', {bubble: prg}]);
   }
 
@@ -191,38 +183,19 @@ export class HomePage {
     if(this.AllBubblesChecked(programs)){
  
 
-      this.dataSrv.data = this.routines.getPrograms();
+      var data = this.routines.getPrograms();
 
-
-      this.router.navigate(['wifi/',{ DataService }]);
-/*
-
-      this.router.navigate(['wifi/' + 
-        this.routines.getProgram(programs[0]) + '/' + 
-        this.routines.getProgram(programs[1]) + '/' + 
-        this.routines.getProgram(programs[2]) + '/' +
-        this.routines.getProgram(programs[3])    
-        
-        ]);
-
-*/
-
-
-
-  /*    this.navCtrl.navigateRoot(
-        'wifi/' + 
-          this.routines.getProgram(programs[0]) + '/' + 
-          this.routines.getProgram(programs[1]) + '/' + 
-          this.routines.getProgram(programs[2]) + '/' +
-          this.routines.getProgram(programs[3])
-       );*/
+      let _programs = { programs: data };
+      let navigationExtras: NavigationExtras = {
+        queryParams: {
+          programs: JSON.stringify(_programs)
+        }
+      };
+      this.router.navigate(['/wifi'], navigationExtras);
     }
   }
 
   private AllBubblesChecked(programs){
-    console.log("Estamos en el metodo AllBubblesChecked");
-    console.log(programs);
-
     if(typeof programs[0] !== 'undefined' && programs[0] != null && programs[0].length > 0 &&
     typeof programs[1] !== 'undefined' && programs[1] != null && programs[1].length > 0 &&
     typeof programs[2] !== 'undefined' && programs[2] != null && programs[2].length > 0 &&

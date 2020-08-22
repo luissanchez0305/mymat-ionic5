@@ -41,8 +41,8 @@
           <ion-item class="item-input contact" [ngClass]="errorGenderClass">
             <ion-label class="item-input contact">{{ 'gender-text' | translate }}</ion-label>
               <ion-select formControlName="gender" >
-                <ion-option value="f">{{ 'female-text' | translate }}</ion-option>
-                <ion-option value="m">{{ 'male-text' | translate }}</ion-option>
+                <ion-select-option value="f">{{ 'female-text' | translate }}</ion-select-option>
+                <ion-select-option value="m">{{ 'male-text' | translate }}</ion-select-option>
               </ion-select>
           </ion-item>
           <ion-item class="item-input contact select" [ngClass]="errorDateClass">

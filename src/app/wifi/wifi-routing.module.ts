@@ -8,10 +8,6 @@ const routes: Routes = [
   {
     path: '',
     component: WifiPage
-  },
-  {
-  	path: 'playing',
-  	component: PlayingPage
   }
 ];
 
