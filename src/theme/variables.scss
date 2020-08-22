@@ -4,6 +4,7 @@
 /** Ionic CSS Variables **/
 
 :root {
+    --ion-background-color: #12121200;
     /** primary **/
     --ion-color-primary: #3880ff;
     --ion-color-primary-rgb: 56, 128, 255;
@@ -69,6 +70,14 @@
     --ion-color-light-tint: #f5f6f9;
     body {
         font-family: Arial, Helvetica, sans-serif;
+    }
+    ion-menu ion-content{
+        background-color: white;
+    }
+    ion-button{
+        --background: #262261;
+        --color: #ffffff;
+        --box-shadow: none;
     }
 }
 
@@ -138,7 +147,6 @@
    * -------------------------------------------
    */
     .ios body {
-        --ion-background-color: #12121200;
         --ion-background-color-rgb: 0, 0, 0;
         --ion-text-color: #ffffff;
         --ion-text-color-rgb: 255, 255, 255;
@@ -169,7 +177,6 @@
    * -------------------------------------------
    */
     .md body {
-        --ion-background-color: #12121200;
         --ion-background-color-rgb: 18, 18, 18;
         --ion-text-color: #ffffff;
         --ion-text-color-rgb: 255, 255, 255;

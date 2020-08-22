@@ -18,7 +18,7 @@
 @import '@ionic/angular/css/core.css';
 
 .logo {
-    width: 120px;
+    width: 50%;
     height: 65px;
     background-image: url(assets/img/logo.png);
     background-position: center center;
@@ -26,13 +26,12 @@
     background-size: 100%;
     z-index: 9999;
     position: relative;
-    top: 0;
-    margin-top:0px;
-    display: inline-block;
+    margin:auto;
+    padding: 30px 0 0 0;
 }
 
 .bar {
-    min-height: 100px;
+    min-height: 75px;
     background-color: #262261!important;
 }
 
@@ -114,12 +113,8 @@ hr {
     opacity: 0.5;
 }
 
-.item-time, .item:nth-child(even) {
+.item-time, .item {
     background-color: #fff !important;
-}
-
-.item-time, .item:nth-child(odd) {
-    background-color: #BBE1F1 !important;
 }
 
 .item-complex .item-content {
@@ -407,6 +402,7 @@ button[disabled].orangebtn {
     text-align: center;
     margin-bottom: 20px;
     display: inline-block;
+    padding: 25px 0 0 0;
 }
 
 .alert-message{

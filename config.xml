@@ -2,8 +2,8 @@
 <widget id="io.ionic.starter" version="9" versionCode="68" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>MyMat</name>
     <description>MyMat stimulates the bodies self-healing capacities using Pulsed Electromagnetic Field (PEMF) therapy. Its technology combines modern scientific research and ancient knowledge about the energetic structure of the human being.</description>
-    <author email="hi@ionicframework.com" href="http://ionicframework.com/">Ionic Framework Team</author>
-    <content src="index.html" /> 
+    <author email="hablemos@esferasoluciones.com" href="https://esferasoluciones.com/">EsferaSoluciones</author>
+    <content src="index.html" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
     <allow-intent href="https://*/*" />
