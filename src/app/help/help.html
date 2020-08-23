@@ -4,84 +4,88 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-  <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-button slot="end">
-      <ion-menu-button></ion-menu-button>
-    </ion-button>
-    <ion-title>
-    </ion-title>
-  </ion-toolbar>
+<ion-header [translucent]="true">
+    <ion-toolbar class="bar">
+        <ion-button slot="end" style="padding-top: 5%;">
+            <ion-menu-button></ion-menu-button>
+        </ion-button>
+        <ion-title style="padding-top: 8%;">
+            <div class="logo"></div>
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
-    <ion-content padding class="home">
 
-        <div class="list card cardprogram">
 
-            <div class="item">
 
-                <h2 padding [innerHTML]="'help-text' | translate">Help</h2>
 
-            </div>
 
-            <div padding class="item item-body">
-                <div class="" [innerHTML]="'help-text1' | translate">How do I know which programs to choose?</div>
-                <p class="lorems" [innerHTML]="'help-text2' | translate">
-                    It is always good to start with balancing the System. These are some ways you could start this with:
-                    Energy Balancing, E-Smog, Joy, Vitality<br><br>
-                    
-                    If you would like to enhance your sleeping pattern – choose:<br>
-                    Energy Balancing, E-Smog, Relax, Sleep<br><br>
-                    
-                    If you would like some extra energy in the morning:<br>
-                    Energy Balancing, Energy Booster, Concentration (and any program connected to a problem you are dealing with – as Pain, Muscle, Joints, Headache etc.) <br><br>
-                    
-                    For a full list of programs and their uses regarding symptoms refer to the user’s manual included with your purchase or available for free online.
-                </p>
-                <div class="" [innerHTML]="'help-text3' | translate">Which programs should I avoid in the evening?</div>
-                <p class="lorems" [innerHTML]="'help-text4' | translate">
-                    If you want to have a good night’s sleep it is better not to over stimulate your organism. If you are used to drinking coffee in the evening and still can sleep you may use any programs but if you are more sensitive – better do not to use the following programs before bed time: Circulation, Immune System, Adrenal, Exhaustion, Concentration and Energy Booster
-                </p>
-                <div class="" [innerHTML]="'help-text5' | translate">How do electromagnetic fields affect my body?</div>
-                <p class="lorems" [innerHTML]="'help-text6' | translate">
-                    Everything in our bodies is electric, our cells communicate with electromagnetic frequencies, our heart generates electromagnetic waves with every beat, our nervous system communicated when neurons react to electro magnetic signals through synapses. With this in mind we can understand how external magnetic, electric and electromagnetic fields react with every aspect of our body. By regulating specific low intensity frequencies we can chose exactly what we want to react with, acting on specified cells, organs and tissues.
-                </p>
-                <div class="" [innerHTML]="'help-text7' | translate">How does treatment at the cellular level help me?</div>
-                <p class="lorems" [innerHTML]="'help-text8' | translate">
-                    By charging magnetic fields surrounding cell membranes channels open up for better nutrient penetration. Opening the channels also promotes easier waste elimination, efficiently restoring proper cell function. An efficient system of cells creates efficient tissue, which come together to make organs. Restoring proper function from the cellular level brings beneficial long term effects to all related problems and improves overall well being. Healthy cell function also diminishes the need for cell replacement, slowing down aging processes and energy waste.
-                </p>
-                
-                <div class="" [innerHTML]="'help-text9' | translate">Can PEMF therapy protect me from future illnesses?</div>
-                <p class="lorems" [innerHTML]="'help-text10' | translate"> Operating effectively at a systematic level will reduce opportunities for diseases to develop. Diseases begin at a cellular level and injuries have to start healing at a cellular level. By using Pulsed Electromagnetic Frequencies one can improve general circulation thus accelerating reparation processes. By improving general cellular health they break down/wear out less often. Healthy operating cells will accelerate recuperation and balance bodily functions. </p>
 
-                <div class="" [innerHTML]="'help-text11' | translate">Aren’t Magnetic Fields bad for me?</div>
-                <p class="lorems" [innerHTML]="'help-text12' | translate"> The MyMat has a frequency range between 1Hz to 200 kHz and EMF strength wont exceed 10 micro Tesla per channel. The MyMat can operate up to 4 channels simultaneously due to its 4 antennae’s, thus a maximum of 40 micro Tesla. Magnetic fields outside of the low and extremely low frequencies such as microwave, infrared, radio and ultraviolet frequencies do have varied detrimental effects on our cells and body. Most of our exposure risk comes from higher frequencies such as power lines and cell phones attached to our heads daily. These frequencies pose higher risks because we are constantly exposed to them and they can induce tissue damage, alter cellular function and create general cellular damage. It is practically impossible to live a life avoiding these frequencies, they are everywhere and penetrate everything. We cant escape E-smog, but we can use the MyMat which has several programs that can help reduce damaging effects from all our constant electronic bombardment by adding frequencies that mantain our bodies in balance, mantaining the healthy, natural frequencies. </p>
 
-                <div class="" [innerHTML]="'help-text13' | translate">Will PEMF therapy replace my medication?</div>
-                <p class="lorems" [innerHTML]="'help-text14' | translate"> Therapy with the Pulsed Electromagnetic Frequencies can make a significant improvement in overall well-being and diminish many negative symptoms. It can be used alongside treatments and medication to improve results. It is important to discuss with medical professionals before replacing any treatments or medication. Once a proper plan is created and results are seen it is possible to reduce or eliminate treatments or medication. Always make sure to ask for medical advise or consultation before changing or replacing existing treatments. </p>
+<ion-content padding class="home">
 
-                <div class="" [innerHTML]="'help-text15' | translate">How do electromagnetic fields affect my body?</div>
-                <p class="lorems" [innerHTML]="'help-text16' | translate">Everything in our bodies is electric, our cells communicate with electromagnetic frequencies, our heart generates electromagnetic waves with every beat, our nervous system communicated when neurons react to electro magnetic signals through synapses. With this in mind we can understand how external magnetic, electric and electromagnetic fields react with every aspect of our body. By regulating specific low intensity frequencies we can chose exactly what we want to react with, acting on specified cells, organs and tissues. </p>
+    <div class="list card cardprogram">
 
-                <div class="" [innerHTML]="'help-text23' | translate">Can I overdose on a magnetic field?</div>
-                <p class="lorems" [innerHTML]="'help-text24' | translate"> The MyMat operates with very low intensity pulsed magnetic fields. A healthy cell operates at ideal capacity so has no need for more energy and cannot accept more energy, so it ignores these frequencies. A damaged or malfunctioning cell can absorb some of this energy but it is impossible for it to overcharge because there is no possibility of storing any more energy than is needed. </p>
+        <div class="item">
 
-                <div class="" [innerHTML]="'help-text25' | translate">What are some of the basic beneficial actions PEMFs will have in my body?</div>
-                <p class="lorems" [innerHTML]="'help-text26' | translate">Improving tissue healing 
-         Reducing pain<br>
-Increasing energy<br>
-Improving sleep<br>
-Making soft tissue more flexible<br>
-Meridian Stimulation<br>
-Reducing Blood Pressure<br>
-Improving clotting factors<br>
-Reducing Arthritis ontake<br>
-Immune system stimulation<br>
-Detox<br>
-Helping nerve function<br>
-Improving Nutrient Absorbtion<br>
-Reducing Muscle tension</p>
-            </div>
+            <h2 style="padding-top: 3%;" padding [innerHTML]="'help-text' | translate">Help</h2>
+
         </div>
 
-    </ion-content>
+        <div padding class="item item-body" style="padding-top: 3%;">
+            <div class="" [innerHTML]="'help-text1' | translate">How do I know which programs to choose?</div>
+            <p class="lorems" [innerHTML]="'help-text2' | translate">
+                It is always good to start with balancing the System. These are some ways you could start this with: Energy Balancing, E-Smog, Joy, Vitality<br><br> If you would like to enhance your sleeping pattern – choose:<br> Energy Balancing, E-Smog,
+                Relax, Sleep<br><br> If you would like some extra energy in the morning:<br> Energy Balancing, Energy Booster, Concentration (and any program connected to a problem you are dealing with – as Pain, Muscle, Joints, Headache etc.) <br><br>                For a full list of programs and their uses regarding symptoms refer to the user’s manual included with your purchase or available for free online.
+            </p>
+            <div class="" [innerHTML]="'help-text3' | translate">Which programs should I avoid in the evening?</div>
+            <p class="lorems" [innerHTML]="'help-text4' | translate">
+                If you want to have a good night’s sleep it is better not to over stimulate your organism. If you are used to drinking coffee in the evening and still can sleep you may use any programs but if you are more sensitive – better do not to use the following
+                programs before bed time: Circulation, Immune System, Adrenal, Exhaustion, Concentration and Energy Booster
+            </p>
+            <div class="" [innerHTML]="'help-text5' | translate">How do electromagnetic fields affect my body?</div>
+            <p class="lorems" [innerHTML]="'help-text6' | translate">
+                Everything in our bodies is electric, our cells communicate with electromagnetic frequencies, our heart generates electromagnetic waves with every beat, our nervous system communicated when neurons react to electro magnetic signals through synapses. With
+                this in mind we can understand how external magnetic, electric and electromagnetic fields react with every aspect of our body. By regulating specific low intensity frequencies we can chose exactly what we want to react with, acting on
+                specified cells, organs and tissues.
+            </p>
+            <div class="" [innerHTML]="'help-text7' | translate">How does treatment at the cellular level help me?</div>
+            <p class="lorems" [innerHTML]="'help-text8' | translate">
+                By charging magnetic fields surrounding cell membranes channels open up for better nutrient penetration. Opening the channels also promotes easier waste elimination, efficiently restoring proper cell function. An efficient system of cells creates efficient
+                tissue, which come together to make organs. Restoring proper function from the cellular level brings beneficial long term effects to all related problems and improves overall well being. Healthy cell function also diminishes the need for
+                cell replacement, slowing down aging processes and energy waste.
+            </p>
+
+            <div class="" [innerHTML]="'help-text9' | translate">Can PEMF therapy protect me from future illnesses?</div>
+            <p class="lorems" [innerHTML]="'help-text10' | translate"> Operating effectively at a systematic level will reduce opportunities for diseases to develop. Diseases begin at a cellular level and injuries have to start healing at a cellular level. By using Pulsed Electromagnetic Frequencies one can improve
+                general circulation thus accelerating reparation processes. By improving general cellular health they break down/wear out less often. Healthy operating cells will accelerate recuperation and balance bodily functions. </p>
+
+            <div class="" [innerHTML]="'help-text11' | translate">Aren’t Magnetic Fields bad for me?</div>
+            <p class="lorems" [innerHTML]="'help-text12' | translate"> The MyMat has a frequency range between 1Hz to 200 kHz and EMF strength wont exceed 10 micro Tesla per channel. The MyMat can operate up to 4 channels simultaneously due to its 4 antennae’s, thus a maximum of 40 micro Tesla. Magnetic fields
+                outside of the low and extremely low frequencies such as microwave, infrared, radio and ultraviolet frequencies do have varied detrimental effects on our cells and body. Most of our exposure risk comes from higher frequencies such as power
+                lines and cell phones attached to our heads daily. These frequencies pose higher risks because we are constantly exposed to them and they can induce tissue damage, alter cellular function and create general cellular damage. It is practically
+                impossible to live a life avoiding these frequencies, they are everywhere and penetrate everything. We cant escape E-smog, but we can use the MyMat which has several programs that can help reduce damaging effects from all our constant
+                electronic bombardment by adding frequencies that mantain our bodies in balance, mantaining the healthy, natural frequencies. </p>
+
+            <div class="" [innerHTML]="'help-text13' | translate">Will PEMF therapy replace my medication?</div>
+            <p class="lorems" [innerHTML]="'help-text14' | translate"> Therapy with the Pulsed Electromagnetic Frequencies can make a significant improvement in overall well-being and diminish many negative symptoms. It can be used alongside treatments and medication to improve results. It is important to discuss
+                with medical professionals before replacing any treatments or medication. Once a proper plan is created and results are seen it is possible to reduce or eliminate treatments or medication. Always make sure to ask for medical advise or
+                consultation before changing or replacing existing treatments. </p>
+
+            <div class="" [innerHTML]="'help-text15' | translate">How do electromagnetic fields affect my body?</div>
+            <p class="lorems" [innerHTML]="'help-text16' | translate">Everything in our bodies is electric, our cells communicate with electromagnetic frequencies, our heart generates electromagnetic waves with every beat, our nervous system communicated when neurons react to electro magnetic signals through
+                synapses. With this in mind we can understand how external magnetic, electric and electromagnetic fields react with every aspect of our body. By regulating specific low intensity frequencies we can chose exactly what we want to react with,
+                acting on specified cells, organs and tissues. </p>
+
+            <div class="" [innerHTML]="'help-text23' | translate">Can I overdose on a magnetic field?</div>
+            <p class="lorems" [innerHTML]="'help-text24' | translate"> The MyMat operates with very low intensity pulsed magnetic fields. A healthy cell operates at ideal capacity so has no need for more energy and cannot accept more energy, so it ignores these frequencies. A damaged or malfunctioning cell can
+                absorb some of this energy but it is impossible for it to overcharge because there is no possibility of storing any more energy than is needed. </p>
+
+            <div class="" [innerHTML]="'help-text25' | translate">What are some of the basic beneficial actions PEMFs will have in my body?</div>
+            <p class="lorems" [innerHTML]="'help-text26' | translate">Improving tissue healing Reducing pain<br> Increasing energy<br> Improving sleep<br> Making soft tissue more flexible<br> Meridian Stimulation<br> Reducing Blood Pressure<br> Improving clotting factors<br> Reducing Arthritis ontake<br> Immune
+                system stimulation<br> Detox
+                <br> Helping nerve function<br> Improving Nutrient Absorbtion<br> Reducing Muscle tension</p>
+        </div>
+    </div>
+
+</ion-content>

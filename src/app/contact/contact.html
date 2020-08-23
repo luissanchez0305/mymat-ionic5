@@ -6,10 +6,10 @@
 -->
 <ion-header>
     <ion-toolbar class="bar">
-        <ion-button slot="end">
+        <ion-button slot="end" style="padding-top: 5%;">
             <ion-menu-button></ion-menu-button>
         </ion-button>
-        <ion-title>
+        <ion-title style="padding-top: 8%;">
             <div class="logo"></div>
         </ion-title>
     </ion-toolbar>
@@ -20,7 +20,7 @@
     <div class="list card cardprogram">
         <div class="item">
 
-            <h2 padding>{{ 'contact-us-text' | translate }}</h2>
+            <h2 style="padding-top: 3%;" padding>{{ 'contact-us-text' | translate }}</h2>
 
         </div>
 
@@ -37,6 +37,9 @@
           <ion-textarea placeholder="{{ 'message-text' | translate }}" formControlName="message" value="{{ message_value }}"></ion-textarea>
         </label><br>
                 <button type="submit" ion-button [disabled]="!contactForm.valid" [disabled]="contactDisabled" class="button-contact button-calm">{{ button_send }}</button>
+
+
+
                 <div padding>
                     {{ response_text }}
                 </div>

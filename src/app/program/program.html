@@ -6,12 +6,12 @@
 -->
 <ion-header>
 
-  <ion-toolbar>
-    <ion-title>{{ programName }}</ion-title>
-    <ion-buttons slot="start">
-      <ion-back-button (click)="goBack()"></ion-back-button>
-    </ion-buttons>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title style="padding-top: 8%;">{{ programName }}</ion-title>
+        <ion-buttons slot="start">
+            <ion-back-button (click)="goBack()"></ion-back-button>
+        </ion-buttons>
+    </ion-toolbar>
 
 </ion-header>
 
@@ -20,18 +20,18 @@
 
     <div class="program-info-modal-holder">
         <div class="program-info-modal-header">
-          <h2 class="program-info-modal-running-time-title">{{ 'running-time' | translate }} </h2>
-        	<h2 class="program-info-modal-running-time">
-             {{ programRunningTime  }} 
-        	</h2>
+            <h2 class="program-info-modal-running-time-title">{{ 'running-time' | translate }} </h2>
+            <h2 class="program-info-modal-running-time">
+                {{ programRunningTime }}
+            </h2>
         </div>
-       
+
         <div class="program-info-modal-mainbody">
-          <div style="height:100%;overflow-y:scroll;">
-            <div style="height:100%; line-height:25px;">{{ programDescription }}</div>
-            <br/>
-            <button class="button-add-program" ion-button (click)="add1Program(programName, programRunningTime, programApiName)">{{ 'add-program' | translate }}</button>
-          </div>
+            <div style="height:100%;overflow-y:scroll;">
+                <div style="height:100%; line-height:25px;">{{ programDescription }}</div>
+                <br/>
+                <button class="button-add-program" ion-button (click)="add1Program(programName, programRunningTime, programApiName)">{{ 'add-program' | translate }}</button>
+            </div>
         </div>
     </div>
 </ion-content>

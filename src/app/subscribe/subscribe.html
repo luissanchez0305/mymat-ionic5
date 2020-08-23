@@ -5,58 +5,58 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-toolbar class="bar">
-    <button ion-button menuToggle end class="button button-clear">
+    <ion-toolbar class="bar">
+        <button ion-button menuToggle end class="button button-clear">
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>
-      <div class="logo"></div>
-    </ion-title>
-  </ion-toolbar>
-  <ion-item class="no-conection" *ngIf="!isDeviceOnline">{{ 'offline-device-text' | translate }}</ion-item>
+        <ion-title style="padding-top: 8%;">
+            <div class="logo"></div>
+        </ion-title>
+    </ion-toolbar>
+    <ion-item class="no-conection" *ngIf="!isDeviceOnline">{{ 'offline-device-text' | translate }}</ion-item>
 </ion-header>
 
 
 <ion-content padding class="home center">
 
-  <div class="list card cardprogram">
-    <ion-item>
+    <div class="list card cardprogram">
+        <ion-item>
 
-        <h2 padding>{{ 'profile-text' | translate }}</h2>
+            <h2 padding>{{ 'profile-text' | translate }}</h2>
 
-    </ion-item>
+        </ion-item>
 
-    <div padding class="item item-body">
-      <form [formGroup]="subscribeForm" (ngSubmit)="attemptSubscribe()">
-        <ion-list>
-          <label>
+        <div padding class="item item-body">
+            <form [formGroup]="subscribeForm" (ngSubmit)="attemptSubscribe()">
+                <ion-list>
+                    <label>
             <p class="lorems center-forced" [innerHTML]="'one-time-profile-text' | translate">Text</p>
           </label>
-          <ion-label class="item-input contact" [ngClass]="errorNameClass">
-            <ion-input type="text" placeholder="{{ 'name-text' | translate }}" formControlName="name" value="{{ name_value }}"></ion-input>
-          </ion-label>
-          <ion-label class="item-input contact" [ngClass]="errorEmailClass">
-            <ion-input type="email" placeholder="Email"  autocapitalize="none" formControlName="email" value="{{ email_value }}"></ion-input>
-          </ion-label>
-          <ion-item class="item-input contact" [ngClass]="errorGenderClass">
-            <ion-label class="item-input contact">{{ 'gender-text' | translate }}</ion-label>
-              <ion-select formControlName="gender" >
-                <ion-select-option value="f">{{ 'female-text' | translate }}</ion-select-option>
-                <ion-select-option value="m">{{ 'male-text' | translate }}</ion-select-option>
-              </ion-select>
-          </ion-item>
-          <ion-item class="item-input contact select" [ngClass]="errorDateClass">
-            <ion-label class="item-input contact" [ngClass]="errorGenderClass">{{ 'birthdate-text' | translate }}</ion-label >
-            <ion-datetime [max]="maxDateOfPicker" displayFormat="MMM DD, YYYY" pickerFormat="YYYY-MM-DD" formControlName="birthDate"></ion-datetime>
-          </ion-item>
-          <ion-item>
-            <button type="submit" ion-button *ngIf="showSubmitButton" [disabled]="!subscribeForm.valid" class="button-contact button-calm">{{ 'button-send' | translate }}</button>
-          </ion-item>
-        </ion-list>
-        <div padding>
-          {{ response_text }}
+                    <ion-label class="item-input contact" [ngClass]="errorNameClass">
+                        <ion-input type="text" placeholder="{{ 'name-text' | translate }}" formControlName="name" value="{{ name_value }}"></ion-input>
+                    </ion-label>
+                    <ion-label class="item-input contact" [ngClass]="errorEmailClass">
+                        <ion-input type="email" placeholder="Email" autocapitalize="none" formControlName="email" value="{{ email_value }}"></ion-input>
+                    </ion-label>
+                    <ion-item class="item-input contact" [ngClass]="errorGenderClass">
+                        <ion-label class="item-input contact">{{ 'gender-text' | translate }}</ion-label>
+                        <ion-select formControlName="gender">
+                            <ion-select-option value="f">{{ 'female-text' | translate }}</ion-select-option>
+                            <ion-select-option value="m">{{ 'male-text' | translate }}</ion-select-option>
+                        </ion-select>
+                    </ion-item>
+                    <ion-item class="item-input contact select" [ngClass]="errorDateClass">
+                        <ion-label class="item-input contact" [ngClass]="errorGenderClass">{{ 'birthdate-text' | translate }}</ion-label>
+                        <ion-datetime [max]="maxDateOfPicker" displayFormat="MMM DD, YYYY" pickerFormat="YYYY-MM-DD" formControlName="birthDate"></ion-datetime>
+                    </ion-item>
+                    <ion-item>
+                        <button type="submit" ion-button *ngIf="showSubmitButton" [disabled]="!subscribeForm.valid" class="button-contact button-calm">{{ 'button-send' | translate }}</button>
+                    </ion-item>
+                </ion-list>
+                <div padding>
+                    {{ response_text }}
+                </div>
+            </form>
         </div>
-      </form>
     </div>
-  </div>
 </ion-content>
