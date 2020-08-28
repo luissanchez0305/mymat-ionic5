@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,9 +12,10 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-/* Empty. Add your own CSS if you like */
-@import '@ionic/angular/css/core.css';
 
+/* Empty. Add your own CSS if you like */
+
+@import '@ionic/angular/css/core.css';
 .logo {
     width: 50%;
     height: 65px;
@@ -26,8 +25,9 @@
     background-size: 100%;
     z-index: 9999;
     position: relative;
-    margin:auto;
-    padding: 30px 0 0 0;
+    top: 0;
+    margin-top: 0px;
+    display: inline-block;
 }
 
 .bar {
@@ -44,8 +44,7 @@
 }
 
 .right-buttons {
-
-    margin-top:0px;
+    margin-top: 0px;
 }
 
 .bar-stable .button.button-clear {
@@ -60,7 +59,6 @@
     margin-top: 25px !important;
 }
 
-
 .button {
     display: inline-block;
 }
@@ -72,16 +70,19 @@
     padding: 10px;
     margin-top: 0px!important;
 }
-.lorems-content{
-    font-size:15px!important;
+
+.lorems-content {
+    font-size: 15px!important;
     color: #121212!important;
 }
 
-input.error, select.error, div.error {
+input.error,
+select.error,
+div.error {
     background-color: #f00 !important;
 }
 
-.item-select select.gray-bg{
+.item-select select.gray-bg {
     background-color: #f1f1f1 !important;
     max-width: 100%;
 }
@@ -113,10 +114,23 @@ hr {
     opacity: 0.5;
 }
 
+<<<<<<< HEAD
 .item-time, .item {
     background-color: #fff !important;
 }
 
+=======
+.item-time,
+.item:nth-child(even) {
+    background-color: #fff !important;
+}
+
+.item-time,
+.item:nth-child(odd) {
+    background-color: #BBE1F1 !important;
+}
+
+>>>>>>> 43a338cd45b57c0b920f9609bc80951acf165899
 .item-complex .item-content {
     position: relative;
     z-index: 2;
@@ -126,10 +140,10 @@ hr {
 }
 
 .bar-button-default-md {
-  color: #fff !important;
+    color: #fff !important;
 }
 
-.no-conection{
+.no-conection {
     text-align: center;
     background-color: #ff9800 !important;
     padding: 0px !important;
@@ -137,8 +151,8 @@ hr {
 
 .programlist {}
 
-.addiction{
-  color: #666 !important;
+.addiction {
+    color: #666 !important;
 }
 
 .center {
@@ -164,7 +178,6 @@ hr {
     padding: 30px;
 }
 
-
 .menuitemhome img {
     margin-right: 10px;
 }
@@ -175,10 +188,12 @@ hr {
     font-size: 14px!important;
 }
 
-.input-cover { display: none; }
+.input-cover {
+    display: none;
+}
 
-.item-input.contact input{
-    width:80%;
+.item-input.contact input {
+    width: 80%;
     height: 35px;
     margin: 0px 0px 10px 0px;
 }
@@ -191,14 +206,14 @@ hr {
 }
 
 .item-select {
-     margin-bottom: 15px !important;
+    margin-bottom: 15px !important;
 }
 
 ion-select {
     max-width: 50% !important;
 }
 
-.button-contact{
+.button-contact {
     border-color: transparent;
     background-color: #f8f8f8;
     color: #444;
@@ -226,14 +241,14 @@ ion-select {
 }
 
 input {
-color: #000 !important;
-background-color: #f1f1f1 ! important;
-background-image: url(assets/img/fondoinput.png);
-background-repeat: repeat;
--webkit-border-radius: 5px;
--moz-border-radius: 5px;
-border-radius: 5px;
-text-align: center;
+    color: #000 !important;
+    background-color: #f1f1f1 ! important;
+    background-image: url(assets/img/fondoinput.png);
+    background-repeat: repeat;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    text-align: center;
     opacity: 0.8
 }
 
@@ -249,14 +264,14 @@ text-align: center;
     padding: 5px;
 }
 
-input.routinename{
-width: 185px;
-padding: 0px 20px;
-margin-bottom: 20px !important;
-margin-top: 20px !important;
-margin: auto;
-position: relative;
-left: -2px !important;
+input.routinename {
+    width: 185px;
+    padding: 0px 20px;
+    margin-bottom: 20px !important;
+    margin-top: 20px !important;
+    margin: auto;
+    position: relative;
+    left: -2px !important;
     font-size: 12px;
 }
 
@@ -272,7 +287,7 @@ left: -2px !important;
     width: 220px;
 }
 
-.graybtn{
+.graybtn {
     background-color: #bbadae;
     border: none;
     color: #FFF;
@@ -293,8 +308,9 @@ left: -2px !important;
     padding-right: 25px;
     text-decoration: none;
 }
+
 .bluebtncancel {
-      background-color: #262261;
+    background-color: #262261;
     border: none;
     color: #FFF;
     padding-top: 5px;
@@ -307,9 +323,11 @@ left: -2px !important;
     margin-top: 20px;
     margin-bottom: 20px;
 }
+
 button[disabled].greenbtn {
     opacity: 0.75;
 }
+
 .greenbtn {
     background-color: #63BB45;
     border: none;
@@ -320,9 +338,11 @@ button[disabled].greenbtn {
     padding-right: 25px;
     text-decoration: none;
 }
+
 button[disabled].orangebtn {
     opacity: 0.75;
 }
+
 .orangebtn {
     background-color: #f37c02;
     border: none;
@@ -334,8 +354,9 @@ button[disabled].orangebtn {
     text-decoration: none;
 }
 
-.redbtn a {    text-decoration: none!important;
-     color: #FFF!important;
+.redbtn a {
+    text-decoration: none!important;
+    color: #FFF!important;
 }
 
 .redbtn {
@@ -386,6 +407,7 @@ button[disabled].orangebtn {
     padding-left: 50px!important;
     width: 220px!important;
 }
+
 .pass {
     margin: auto;
     background-image: url(assets/img/pass.png);
@@ -396,7 +418,7 @@ button[disabled].orangebtn {
     width: 220px!important;
 }
 
-.bubblescontainer{
+.bubblescontainer {
     width: 100%;
     margin: auto;
     text-align: center;
@@ -405,20 +427,20 @@ button[disabled].orangebtn {
     padding: 25px 0 0 0;
 }
 
-.alert-message{
-   white-space: pre-line;
+.alert-message {
+    white-space: pre-line;
 }
 
-.bubbles{
-background-image: url(assets/img/empty-bubbles.png);
-background-repeat: no-repeat;
-
-margin-top: 75px;
-background-size: 100%;
-width: 275px;
-height: 275px;
-margin: auto;
+.bubbles {
+    background-image: url(assets/img/empty-bubbles.png);
+    background-repeat: no-repeat;
+    margin-top: 75px;
+    background-size: 100%;
+    width: 275px;
+    height: 275px;
+    margin: auto;
 }
+
 .empty-single-bubble {
     background-image: url("assets/img/single-bubble.png");
     background-repeat: no-repeat;
@@ -427,6 +449,7 @@ margin: auto;
     margin-left: 107px;
     width: 60px;
 }
+
 .single-bubble-1-empty {
     background-image: url("assets/img/single-bubble.png");
     background-repeat: no-repeat;
@@ -435,6 +458,7 @@ margin: auto;
     margin-left: 107px;
     width: 60px;
 }
+
 .single-bubble-1 {
     background-image: url("assets/img/single-bubble.png");
     background-repeat: no-repeat;
@@ -443,6 +467,7 @@ margin: auto;
     margin-left: 107px;
     width: 60px;
 }
+
 .single-bubble-2 {
     background-image: url("assets/img/single-bubble.png");
     background-repeat: no-repeat;
@@ -452,6 +477,7 @@ margin: auto;
     margin-top: 50px;
     width: 60px;
 }
+
 .single-bubble-3 {
     background-image: url("assets/img/single-bubble.png");
     background-repeat: no-repeat;
@@ -461,6 +487,7 @@ margin: auto;
     margin-top: 50px;
     width: 60px;
 }
+
 .single-bubble-4 {
     background-image: url("assets/img/single-bubble.png");
     background-repeat: no-repeat;
@@ -470,49 +497,53 @@ margin: auto;
     margin-top: -170px;
     width: 60px;
 }
-.bubbles1{
+
+.bubbles1 {
     background-image: url(assets/img/bubbles1.png);
     background-repeat: no-repeat;
     margin-top: 50px;
     background-size: 100%;
     width: 275px;
     height: 275px;
-display:none
+    display: none
 }
 
-.bubbles2{
+.bubbles2 {
     background-image: url(assets/img/bubbles2.png);
     background-repeat: no-repeat;
     margin-top: 50px;
     background-size: 100%;
     width: 275px;
     height: 275px;
-display:none;
+    display: none;
 }
 
-.bubbles3{
+.bubbles3 {
     background-image: url(assets/img/bubbles3.png);
     background-repeat: no-repeat;
     margin-top: 50px;
     background-size: 100%;
     width: 275px;
     height: 275px;
-display:none;
+    display: none;
 }
 
-.run{margin-bottom: 20px;}
+.run {
+    margin-bottom: 20px;
+}
 
-.bubbles4{
+.bubbles4 {
     background-image: url(assets/img/bubbles4.png);
     background-repeat: no-repeat;
     margin-top: 50px;
     background-size: 100%;
     width: 275px;
     height: 275px;
-display:none;
+    display: none;
 }
 
-.home, .programs {
+.home,
+.programs {
     background-image: url(assets/img/fondo.png)!important;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -559,10 +590,6 @@ display:none;
     text-align: center;
 }
 
-
-
-
-
 .menutitle img {
     width: 130px;
     margin-top: 20px;
@@ -572,6 +599,7 @@ display:none;
 .menuitem .item-content {
     background-color: #FFF!important;
 }
+
 .menuitemintern .item-content {
     background-color: #FFF!important;
     background-image: url(assets/img/menuhome.png)!important;
@@ -579,6 +607,7 @@ display:none;
     background-position: top right;
     background-position: 7% 17px;
 }
+
 .menuitemhome .item-content {
     background-color: #FFF!important;
     background-image: url(assets/img/menuhome.png)!important;
@@ -587,13 +616,13 @@ display:none;
     background-position: 7% 0px;
 }
 
-.programAddButton{
+.programAddButton {
     float: left;
     width: 80%;
     text-align: center;
 }
 
-.programInfoButton{
+.programInfoButton {
     float: right;
     width: 10%;
     text-align: right;
@@ -661,7 +690,8 @@ display:none;
     background-position: 7% 17px;
 }
 
-.menuitemusers.last .item-content, .menuitemhelp.last .item-content {
+.menuitemusers.last .item-content,
+.menuitemhelp.last .item-content {
     border-bottom: none !important;
 }
 
@@ -714,7 +744,7 @@ display:none;
 .copyright {
     width: 80%;
     margin: auto;
-    text-align:center;
+    text-align: center;
     padding-bottom: 100px;
 }
 
@@ -761,7 +791,7 @@ display:none;
 .programdesc {
     width: 100%;
     text-align: center;
-    word-wrap:break-word;
+    word-wrap: break-word;
 }
 
 .program-running-title {
@@ -799,16 +829,18 @@ display:none;
     box-shadow: none;
 }
 
-#circle1, #circle2, #circle3, #circle4{
-background-image: url(assets/img/circle.png);
-background-size: 100%;
-width: 75px;
-height: 75px;
-padding-top: 5px;
-position: relative;
-
-right: 5px !important;
-display: inline-block;
+#circle1,
+#circle2,
+#circle3,
+#circle4 {
+    background-image: url(assets/img/circle.png);
+    background-size: 100%;
+    width: 75px;
+    height: 75px;
+    padding-top: 5px;
+    position: relative;
+    right: 5px !important;
+    display: inline-block;
 }
 
 .card .item:nth-child(1) {
@@ -825,6 +857,8 @@ display: inline-block;
 
 .card .item {
     text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .card .item h2 {
@@ -850,6 +884,7 @@ display: inline-block;
     -moz-border-radius-topright: 10px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    height: 50px;
 }
 
 .wide-as-needed {
@@ -864,26 +899,22 @@ display: inline-block;
 }
 
 .program-running-progress {
-    width:80px;
-    height:80px;
+    width: 80px;
+    height: 80px;
 }
-
 
 #profilepic {
-
-width: 130px;
-height: 130px;
-border-radius: 100px;
-border: 5px solid #262261;
+    width: 130px;
+    height: 130px;
+    border-radius: 100px;
+    border: 5px solid #262261;
 }
-
 
 .second-modal {
     background-repeat: repeat;
 }
 
 .modal-program-info-wrapper {
-
     background-color: #000;
     position: fixed;
     width: 100%;
@@ -892,27 +923,26 @@ border: 5px solid #262261;
 }
 
 .program-info-modal-holder {
-
- background-color: #ffffff;
+    background-color: #ffffff;
     border-radius: 10px;
     height: 75vh;
     margin: 30px auto;
     max-width: 85%;
     overflow: hidden;
-    border:1px solid #262261;
+    border: 1px solid #262261;
     width: 100%;
-
 }
 
-.toolbar-background-ios{
+.toolbar-background-ios {
     background-color: #262261 !important;
 }
+
 .toolbar-title-ios {
     margin: 10px 0px;
     color: #fff;
 }
 
-.bar-button-default-ios{
+.bar-button-default-ios {
     color: #fff !important;
 }
 
@@ -924,208 +954,221 @@ border: 5px solid #262261;
     height: 80%;
 }
 
-.program-info-modal-mainbody button{
+.program-info-modal-mainbody button {
     margin: 0 0 15px 0;
 }
 
-ion-scroll .scroll-content{
+ion-scroll .scroll-content {
     overflow-y: scroll !important;
 }
 
-
 .program-info-modal-close-button {
-font-family: !important;
-color: #FFF;
-font-size: 1.4em;
-font-weight: bold;
-position: absolute;
-right: 32px;
-top: 10px;
-background-color: #0D0948;
-padding-left: 6px;
-padding-right: 5px;
-border-radius: 5px;
-padding-top: 2px;
-padding-bottom: 2px;
+    font-family: !important;
+    color: #FFF;
+    font-size: 1.4em;
+    font-weight: bold;
+    position: absolute;
+    right: 32px;
+    top: 10px;
+    background-color: #0D0948;
+    padding-left: 6px;
+    padding-right: 5px;
+    border-radius: 5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     cursor: pointer;
 }
 
 .program-info-modal-header {
-
-    moz-border-radius-topleft:10px;
-    moz-border-radius-topright:10px;
+    moz-border-radius-topleft: 10px;
+    moz-border-radius-topright: 10px;
     background-color: #79c3e1;
     width: 100%;
     height: 105px;
 }
 
 .program-info-modal {
-
-   opacity: 1;
-   background-image: none !important;
+    opacity: 1;
+    background-image: none !important;
 }
 
-
 .program-info-modal-title {
-
     text-transform: uppercase;
-    color:#ffffff;
+    color: #ffffff;
     text-align: center;
-    font-size:1.2em;
+    font-size: 1.2em;
     font-weight: bold;
     padding-top: 38px;
     width: 100%;
     height: 30px;
 }
 
-
 .program-info-modal-running-time {
-
     text-transform: uppercase;
-    color:#ffffff;
+    color: #ffffff;
     text-align: center;
     font-weight: normal;
     width: 100%;
     height: 30px;
 }
 
-.program-info-modal-header h2.program-info-modal-running-time-title{
+.program-info-modal-header h2.program-info-modal-running-time-title {
     padding-top: 1.8rem;
 }
 
 .program-info-modal-button-holder {
-
     margin-top: 20px;
     text-align: center;
     width: 100%;
 }
 
-
 .bubbles-program-name-1 {
-color: #FFF;
-font-weight: bolder;
--webkit-text-stroke: 0.85px #444;
-font-size: 110%;
-width: 275px;
-overflow: hidden;
-height: 60px;
-margin-top: 0px;
-text-align: center;
-position: absolute;
+    color: #FFF;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.85px #444;
+    font-size: 110%;
+    width: 275px;
+    overflow: hidden;
+    height: 60px;
+    margin-top: 0px;
+    text-align: center;
+    position: absolute;
 }
 
 .bubbles-program-name-2 {
-color: #FFF;
-font-weight: bolder;
--webkit-text-stroke: 0.85px #444;
-font-size: 110%;
-width: 145px;
-overflow: hidden;
-height: 60px;
-text-align: right;
-margin-top: 0px;
-float: right;
+    color: #FFF;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.85px #444;
+    font-size: 110%;
+    width: 145px;
+    overflow: hidden;
+    height: 60px;
+    text-align: right;
+    margin-top: 0px;
+    float: right;
 }
 
 .bubbles-program-name-3 {
-color: #FFF;
-font-weight: bolder;
--webkit-text-stroke: 0.85px #444;
-font-size: 110%;
-width: 275px;
-overflow: hidden;
-height: 60px;
-margin-top: 0px;
-text-align: center;
-position: absolute;
+    color: #FFF;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.85px #444;
+    font-size: 110%;
+    width: 275px;
+    overflow: hidden;
+    height: 60px;
+    margin-top: 0px;
+    text-align: center;
+    position: absolute;
 }
 
 .bubbles-program-name-4 {
-color: #FFF;
-font-weight: bolder;
--webkit-text-stroke: 0.85px #444;
-font-size: 110%;
-width: 145px;
-overflow: hidden;
-height: 60px;
-text-align: left;
-margin-top: 0px;
-position: absolute;
+    color: #FFF;
+    font-weight: bolder;
+    -webkit-text-stroke: 0.85px #444;
+    font-size: 110%;
+    width: 145px;
+    overflow: hidden;
+    height: 60px;
+    text-align: left;
+    margin-top: 0px;
+    position: absolute;
 }
+
+
 /* DivTable.com */
-.divTable{
-	display: table;
-	width: 100%;
+
+.divTable {
+    display: table;
+    width: 100%;
 }
-.divTableHead, .divTableCell {
-  text-align:center;
+
+.divTableHead,
+.divTableCell {
+    text-align: center;
 }
+
 .divTableRow {
-	display: table-row;
+    display: table-row;
 }
+
 .divTableHeading {
     background-color: #262261 !important;
-	display: table-header-group;
+    display: table-header-group;
 }
-.divTableHeading h4  {
-	color: #fff;
-	font-size: 200%;
+
+.divTableHeading h4 {
+    color: #fff;
+    font-size: 200%;
 }
+
 .divTableCell.coilOdd {
     background-color: #9fd0dd!important;
 }
-.divTableCellFirstRight{
+
+.divTableCellFirstRight {
     border-radius: 0px 5px 0px 0px;
     padding: 0px;
 }
-.divTableCellFirstLeft{
+
+.divTableCellFirstLeft {
     border-radius: 5px 0px 0px 0px;
 }
-.divTableCellLastRight{
+
+.divTableCellLastRight {
     border-radius: 0px 0px 5px 0px;
 }
-.divTableCellLastLeft{
+
+.divTableCellLastLeft {
     border-radius: 0px 0px 0px 5px;
 }
-.divTableCell, .divTableHead {
-	border: 0px;
-	display: table-cell;
-	padding: 15px 10px;
+
+.divTableCell,
+.divTableHead {
+    border: 0px;
+    display: table-cell;
+    padding: 15px 10px;
 }
+
 .divTableCell {
-	background-color: #e3f2f8!important;
-	color: #000 !important;
-	font-size: 19px;
+    background-color: #e3f2f8!important;
+    color: #000 !important;
+    font-size: 19px;
 }
+
 .divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-	font-weight: bold;
+    background-color: #EEE;
+    display: table-header-group;
+    font-weight: bold;
 }
+
 .divTableFoot {
-	background-color: #EEE;
-	display: table-footer-group;
-	font-weight: bold;
+    background-color: #EEE;
+    display: table-footer-group;
+    font-weight: bold;
 }
+
 .divTableBody {
-	display: table-row-group;
+    display: table-row-group;
 }
-.toolbar-background-md{
+
+.toolbar-background-md {
     background-color: transparent;
 }
-.toolbar-ios{
+
+.toolbar-ios {
     min-height: 100px !important;
 }
 
-ion-scroll[scrollx=true], ion-scroll[scrolly=true] {
+ion-scroll[scrollx=true],
+ion-scroll[scrolly=true] {
     position: relative;
     overflow: hidden;
-  }
-  
-  ion-scroll[scrollx=true] {
+}
+
+ion-scroll[scrollx=true] {
     overflow-x: auto;
-  }
-  
-  ion-scroll[scrolly=true] {
+}
+
+ion-scroll[scrolly=true] {
     overflow-y: auto;
-  }
+}
