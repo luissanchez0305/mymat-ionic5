@@ -54,10 +54,6 @@ export class HomePage {
     private router: Router) {
     //this.checkAllBubbles();
     this.events.subscribe('sharesBubbles', (data: any) => {
-      console.log(data.bubbleNames);
-      console.log(data);
-     
-      console.log("Estoy aqui");
       for(var i = 1; i <= data.bubbleNames.length; i++){
         this.updateBubbles(i, data.bubbleNames[i - 1]);
       }

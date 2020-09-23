@@ -17,17 +17,15 @@
 
 @import '@ionic/angular/css/core.css';
 .logo {
-    width: 50%;
-    height: 65px;
+    width: 100%;
+    height: 40px;
     background-image: url(assets/img/logo.png);
-    background-position: center center;
     background-repeat: no-repeat;
     background-size: 100%;
     z-index: 9999;
     position: relative;
-    top: 0;
-    margin-top: 0px;
-    display: inline-block;
+    margin:auto;
+    padding: 10px 0 0 0;
 }
 
 .bar {
@@ -114,23 +112,10 @@ hr {
     opacity: 0.5;
 }
 
-<<<<<<< HEAD
 .item-time, .item {
     background-color: #fff !important;
 }
 
-=======
-.item-time,
-.item:nth-child(even) {
-    background-color: #fff !important;
-}
-
-.item-time,
-.item:nth-child(odd) {
-    background-color: #BBE1F1 !important;
-}
-
->>>>>>> 43a338cd45b57c0b920f9609bc80951acf165899
 .item-complex .item-content {
     position: relative;
     z-index: 2;

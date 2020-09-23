@@ -22,8 +22,8 @@ import { Device } from '@ionic-native/device/ngx';
 import { Network } from '@ionic-native/network/ngx';
 import { LocalNotifications } from '@ionic-native/local-notifications/ngx';
 
-export function createTranslateLoader(http: HttpClient) {
-  return new TranslateHttpLoader(http, '../assets/i18n/', '.json');
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
 }
 
 @NgModule({
@@ -38,7 +38,7 @@ export function createTranslateLoader(http: HttpClient) {
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
-        useFactory: (createTranslateLoader),
+        useFactory: (HttpLoaderFactory),
         deps: [HttpClient]
       }
     }),

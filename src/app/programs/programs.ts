@@ -271,13 +271,6 @@ export class ProgramsPage implements OnInit {
 
   addPrograms(routineName, program1, program2, program3, program4){
     //aqui addprogramas
-
-    console.log(program1);
-    console.log(program2);
-    console.log(program3);
-    console.log(program4);
-    console.log("routinename.apiname");
-    console.log(routineName.apiName);
     var bubbleNames = this.routines.addPrograms(routineName, program1, program2, program3, program4);
     
     this.events.publish("sharesBubbles", { bubbleNames : bubbleNames });

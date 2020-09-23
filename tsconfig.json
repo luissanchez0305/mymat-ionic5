@@ -19,5 +19,6 @@
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  }
+  },
+  "include": ["src/**/*", "src/assets/**/*", "src/**/*.json", "src/assets/i18n/*"]
 }
